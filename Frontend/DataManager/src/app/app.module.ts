@@ -10,7 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserComponent } from './user/user.component';
 import { SignUpComponent } from './user/sign-up/sign-up.component';
 import { SignInComponent } from './user/sign-in/sign-in.component';
-
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 const Approutes : Routes = [
   {path:'home', component:HomeComponent},
@@ -45,7 +45,9 @@ const Modules = [
     BrowserModule,
     RouterModule.forRoot(Approutes, {enableTracing:false}),
     BrowserAnimationsModule,
-    Modules
+    Modules,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     Modules
