@@ -1,0 +1,526 @@
+.text, .email, .password {
+    background-color: #f1f1f1;
+    width: 25%;
+    border-radius: 3px;
+    border: none;
+    padding: 9px;
+    transition: 200ms;
+}
+
+.text:focus, .email:focus, .password:focus {
+    background-color: #e8e8e8;
+    width: 20%;
+}
+
+.hidden {
+    display: none;
+}
+
+code {
+    z-index: 9999;
+    position: absolute;
+    box-sizing: border-box;
+    height: 500px;
+    padding: 10px;
+    background-color: #ddd;
+    width: 100%;
+    border: #aaa solid 3px;
+    word-wrap: break-word;
+    word-break: break-all;
+    border-radius: 10px;
+}
+
+/* ************************************************************************** */
+/* ***************************** SUBMIT STANDARD **************************** */
+/* ************************************************************************** */
+.submit-standard {
+    background-color: DodgerBlue;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 3px;
+    border: none;
+    padding: 9px;
+    transition: 200ms;
+}
+
+.submit-standard:hover {
+    background-color: lightblue;
+    color: #fff;
+}
+
+/* ************************************************************************** */
+/* ***************************** SUBMIT CREATE ****************************** */
+/* ************************************************************************** */
+.submit-create {
+    background-color: limeGreen;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 3px;
+    border: none;
+    padding: 9px;
+    transition: 200ms;
+}
+
+.submit-create:hover {
+    background-color: lightGreen;
+    color: #fff;
+}
+
+
+/* ************************************************************************** */
+/* ***************************** SUBMIT DELETE ****************************** */
+/* ************************************************************************** */
+.submit-delete {
+    background-color: Crimson;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 3px;
+    border: none;
+    padding: 9px;
+    transition: 200ms;
+}
+
+.submit-delete:hover {
+    background-color: lightCoral;
+    color: #fff;
+}
+
+
+/*******************************************************************************/
+
+.link-extern {
+	background: white;
+    color: black;
+    border: black 3px solid;
+    padding: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.parallax {
+	background: linear-gradient(to right,#5ab, blue);
+    background-attachment: fixed;
+    height: 500px;
+    width: 100%;
+}
+
+.message {
+
+}
+
+.outer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.inner {
+    position: relative;
+    display: grid;
+    grid-template: 10% 1fr 1fr 1fr 10% / 10% 10% 1fr 1fr 1fr 20%;
+    min-height: 100%;
+    width: 100%;
+}
+
+/* **********  NAVIGATION */
+
+.navigation {
+    grid-area: 1 / 1 / 2 / 7;
+    background: crimson;
+    position: sticky;
+    top: 0;
+    left: 0;
+    transition: 200ms;
+    height: 110%;
+}
+
+.navigation nav ul li {
+    list-style: none;
+    padding: 0.4%;
+    margin: 1.0%;
+    float: left;
+    background: darkslategrey;
+    border: 3px inset black;
+    transition: 200ms;
+
+}
+
+.search {
+    position: relative;
+    max-width: 500px;
+}
+
+div.searchbar {
+    width: 15%;
+    position: absolute;
+    bottom: 24px;
+    left: 80%;
+}
+
+div.searchbar img {
+    position: relative;
+    top: 42px;
+    right: 30px;
+    padding: 5px 0;
+    background-color: white;
+    border-radius: 1%;
+    width: 30px;
+    height: 27px;
+}
+
+div.searchbar input {
+    padding: 10px;
+    width: 100%;
+}
+
+input.searchbar {
+    position: relative;
+    bottom: 36px;
+    left: 0%;
+    padding: 6px;
+    width: 100%;
+    max-width: 300px;
+    border: 2px solid #777;
+    box-shadow: inset 1px 1px 2px 0px grey;
+}
+
+.searchbar::before {
+    content: '\f1c1';
+    width: 50px;
+    height: 50px;
+    font-family: fontawesome;
+}
+
+div.create {
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    position: relative;
+    padding: 8px;
+    width: 13.2%;
+    top: 35px;
+    left: 85.5%;
+    text-align: center;
+    background: black;
+}
+
+.create.link {
+    text-decoration: none;
+    color: limegreen;
+}
+
+/*         NAVIGATION          */
+
+.navigation nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.navigation nav ul li:hover {
+    border-color: white;
+    padding: 0.5%;
+    background-color: azure;
+}
+
+.navigation nav ul li:hover a {
+    color: black;
+}
+
+.navigation nav ul li li {
+    display: none;
+}
+
+.navigation nav ul li:hover li {
+    display: block;
+}
+
+.navigation:focus-within {
+    background: black;
+    height: 70%;
+}
+
+.navigation:focus-within nav ul li {
+    background: crimson;
+    border-color: darkred;
+}
+
+/* ********** MAIN CONTENT */
+#main {
+    position: relative;
+    order: -1;
+    overflow-y: auto;
+    min-height: 100%;
+    grid-area: 2 / 1 / 6 / 6;
+    background: DodgerBlue;
+}
+
+#main h1, #main p {
+    margin: 2.5% 1%;
+}
+
+#main p {
+    margin: 1% 1%;
+}
+
+/* ********* SIDEBAR */
+.sidebar {
+    grid-area: 2 / 6 / 6 / 7;
+    background: limeGreen;
+}
+
+
+/* ********* FOOTER */
+.footer {
+    box-sizing: border-box;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    padding: 14px 0;
+    grid-area: 5 / 1 / 6 / 7;
+    text-align: left;
+}
+
+.footer ul {
+    margin: 16px;
+}
+
+.footer ul li {
+    margin: 6px;
+    float: left;
+}
+
+.footer ul li:not(:first-of-type) {
+    padding-left: 12px;
+    border-left: white 2px solid;
+}
+
+.footer ul li:not(:first-of-type)::before {
+    content: ' ';
+}
+
+.footer ul li a {
+    color: white;
+}
+
+
+/*******************************************************************************/
+/**************************** Quantity Query ***********************************/
+/*******************************************************************************/
+
+.form label:nth-last-child(7):first-child,
+.form label:nth-last-child(n+7):first-child ~ label input[type=submit] {
+    background: linear-gradient(to left, limeGreen, green);
+    display: flex;
+}
+
+.form label:nth-last-child(7):first-child,
+.form label:nth-last-child(n+7):first-child ~ label input[type=submit]:hover {
+    background: linear-gradient(to left, lightcoral, crimson);
+}
+
+.form label:nth-last-child(7):first-child,
+.form label:nth-last-child(n+7):first-child ~ label input[type=submit] + div.message {
+    opacity: 0;
+    position: relative;
+    background: none;
+    bottom: 0;
+    left: 0;
+    width: 1px;
+    font-size: 1px;
+    transition: 200ms;
+}
+
+.form label:nth-last-child(7):first-child,
+.form label:nth-last-child(n+7):first-child ~ label input[type=submit]:hover + div.message{
+    padding: 0 5px;
+    background: lightCoral;
+    color: white;
+    border: black dotted 2px;
+    width: 150px;
+    bottom: 50px;
+    left: 140px;
+    font-size: 16px;
+    opacity: 1;
+}
+
+/*******************************************************************************************/
+
+.form label:nth-last-child(7):first-child,
+.form label:nth-last-child(n+7):first-child ~ label input:not([type=submit]) + div.message {
+    opacity: 0;
+    position: relative;
+    background: white;
+    bottom: 0;
+    border: white dotted 0;
+    color: white
+    left: 0;
+    width: 1px;
+    font-size: 1px;
+    transition: 200ms;
+}
+
+.form label:nth-last-child(7):first-child,
+.form label:nth-last-child(n+7):first-child ~ label input:not([type=submit]):focus + div.message{
+    padding: 0 5px;
+    background: lightSkyBlue;
+    color: white;
+    border: DodgerBlue dotted 2px;
+    width: 150px;
+    bottom: 50px;
+    left: 25%;
+    font-size: 16px;
+    opacity: 1;
+}
+
+/******************************************************************************************
+
+*******************************************************************************************/
+/*******************************************************************************/
+/**************************** Quantity Query ***********************************/
+/*******************************************************************************/
+
+.form label:nth-last-child(n+8):first-child,
+.form label:nth-last-child(n+8):first-child ~ label input[type=submit] {
+    background: linear-gradient(to left, limeGreen, green);
+    display: flex;
+}
+
+.form label:nth-last-child(n+8):first-child,
+.form label:nth-last-child(n+8):first-child ~ label input[type=submit]:hover {
+    background: linear-gradient(to left, lightcoral, crimson);
+}
+
+.form label:nth-last-child(n+8):first-child,
+.form label:nth-last-child(n+8):first-child ~ label input[type=submit] + div.message {
+    opacity: 0;
+    position: relative;
+    background: none;
+    bottom: 0;
+    left: 0;
+    width: 1px;
+    font-size: 1px;
+    transition: 200ms;
+}
+
+.form label:nth-last-child(n+8):first-child,
+.form label:nth-last-child(n+8):first-child ~ label input[type=submit]:hover + div.message{
+    padding: 0 5px;
+    background: lightCoral;
+    color: white;
+    border: black dotted 2px;
+    width: 150px;
+    bottom: 50px;
+    left: 140px;
+    font-size: 16px;
+    opacity: 1;
+}
+
+/*******************************************************************************************/
+
+.form label:nth-last-child(n+8):first-child,
+.form label:nth-last-child(n+8):first-child ~ label input:not([type=submit]) + div.message {
+    opacity: 0;
+    position: relative;
+    background: white;
+    bottom: 0;
+    border: white dotted 0;
+    color: white
+    left: 0;
+    width: 1px;
+    font-size: 1px;
+    transition: 200ms;
+}
+
+.form label:nth-last-child(n+8):first-child,
+.form label:nth-last-child(n+8):first-child ~ label input:not([type=submit]):focus + div.message{
+    padding: 0 5px;
+    background: lightSkyBlue;
+    color: white;
+    border: DodgerBlue dotted 2px;
+    width: 150px;
+    bottom: 50px;
+    left: 25%;
+    font-size: 16px;
+    opacity: 1;
+}
+
+/*******************************************************************************************/
+/*                                           TABLE                                         */
+/*******************************************************************************************/
+.table {
+    padding: 8px;
+    padding-bottom: 15px;
+    margin-bottom: 130px;
+    box-sizing: border-box;
+    width: 100%;
+    background: #000;
+}
+
+.table tr {
+    background: #eee;
+}
+
+.table tr:first-of-type {
+    background: #000;
+    color: white;
+}
+
+.table tr:nth-of-type(odd):not(:first-of-type) {
+    background: #bbb;
+}
+
+.table tr th {
+    box-sizing: border-box;
+    padding: 8px;
+}
+
+.table tr td {
+    box-sizing: border-box;
+    padding: 8px;
+}
+
+
+/*                                     TABLE WITH FUNCTIONS                                  */
+.table.withFunctions tr td:last-of-type {
+    background: black;
+    text-align: right;
+}
+
+.table.withFunctions tr td:last-of-type a {
+    text-decoration: none;
+    font-size: 16px;
+    color: white;
+}
+
+.table.withFunctions tr td:last-of-type a:hover {
+    text-decoration: underline;
+}
+
+.table.withFunctions tr td:last-of-type a.info {
+    color: DodgerBlue;
+}
+
+.table.withFunctions tr td:last-of-type a.delete {
+    color: Crimson;
+}
+
+/*                                    DRAG AND DROP:                                     */
+[draggable] {
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -khtml-user-drag: element;
+    -webkit-user-drag: element;
+}
+
+.row {
+    cursor: move;
+}
+
+.row.over {
+  border: 2px dashed #000;
+}
+
+/**********************************************************************************************/
+/**********************************************************************************************/
