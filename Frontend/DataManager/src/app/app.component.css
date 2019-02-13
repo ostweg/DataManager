@@ -1,0 +1,23 @@
+.nav {
+    margin-top:20px;
+    text-align: center;
+    margin-bottom:50px;
+}
+a {
+    color:black;
+    font-family:"Robotic", sans-serif;
+}
+a:link{
+color:none;
+text-decoration: None;
+}
+a:hover {
+   color:#5E3A86;
+}
+a:nth-child(1){
+    
+    margin-right:10px;
+}
+a:nth-child(2) {
+    margin-left:10px;
+}
