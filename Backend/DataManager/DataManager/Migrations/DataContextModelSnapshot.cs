@@ -60,7 +60,7 @@ namespace DataManager.Migrations
 
                     b.Property<string>("BackupEmail");
 
-                    b.ToTable("Admin");
+                    b.ToTable("Admins");
 
                     b.HasDiscriminator().HasValue("Admin");
                 });
@@ -71,7 +71,7 @@ namespace DataManager.Migrations
 
                     b.Property<int>("Money");
 
-                    b.ToTable("User");
+                    b.ToTable("Users");
 
                     b.HasDiscriminator().HasValue("User");
                 });

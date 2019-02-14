@@ -11,7 +11,7 @@ namespace DataManager.Models
         public int PersonId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public Rights RightsRefId { get; set; }
+        public string Rights {get;set;}
         public string Email { get; set; }
 
     }

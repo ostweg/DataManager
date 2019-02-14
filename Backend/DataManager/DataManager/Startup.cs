@@ -33,7 +33,7 @@ namespace DataManager
                     .AllowAnyHeader()
                     .AllowCredentials()));
 
-            services.AddDbContext<DataContext>(opt => opt.UseMySql("server=localhost;database=DataManager;user=root;password=YourPassword"));
+            services.AddDbContext<DataContext>(opt => opt.UseMySql("server=localhost;database=DataManager;user=root;password=w2ter2468"));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 

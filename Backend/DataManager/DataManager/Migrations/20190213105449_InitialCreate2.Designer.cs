@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataManager.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20190212175039_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20190213105449_InitialCreate2")]
+    partial class InitialCreate2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -62,7 +62,7 @@ namespace DataManager.Migrations
 
                     b.Property<string>("BackupEmail");
 
-                    b.ToTable("Admin");
+                    b.ToTable("Admins");
 
                     b.HasDiscriminator().HasValue("Admin");
                 });
@@ -73,7 +73,7 @@ namespace DataManager.Migrations
 
                     b.Property<int>("Money");
 
-                    b.ToTable("User");
+                    b.ToTable("Users");
 
                     b.HasDiscriminator().HasValue("User");
                 });

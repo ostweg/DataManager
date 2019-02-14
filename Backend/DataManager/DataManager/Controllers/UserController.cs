@@ -17,23 +17,17 @@ namespace TodoApi.Controllers
         {
             _context = context;
 
-            if (_context.Users.Count() == 0)
-            {
-                // Create a new TodoItem if collection is empty,
-                // which means you can't delete all TodoItems.
-                _context.Users.Add(new User { FirstName = "test" });
-                _context.SaveChanges();
-            }
+        
         }
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<User>>> GetUsers()
+        public async Task<ActionResult<IEnumerable<Person>>> GetUsers()
         {
-            return await _context.Users.ToListAsync();
+            return await _context.Persons.ToListAsync();
         }
         [HttpGet("{id}")]
-        public async Task<ActionResult<User>> GetUserById(long id)
+        public async Task<ActionResult<Person>> GetUserById(long id)
         {
-            var todoItem = await _context.Users.FindAsync(id);
+            var todoItem = await _context.Persons.FindAsync(id);
 
             if (todoItem == null)
             {
@@ -43,9 +37,9 @@ namespace TodoApi.Controllers
             return todoItem;
         }
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateUser(long id, User user)
+        public async Task<IActionResult> UpdateUser(long id, Person user)
         {
-            if (id != user.PersonId)
+            if (id != Persons.PersonId)
             {
                 return BadRequest();
             }
@@ -56,7 +50,7 @@ namespace TodoApi.Controllers
             return NoContent();
         }
         [HttpPost]
-        public async Task<ActionResult<User>> PostUser(User user)
+        public async Task<ActionResult<Person>> PostUser(Person user)
         {
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
@@ -64,15 +58,15 @@ namespace TodoApi.Controllers
             return CreatedAtAction("GetTodoItem", new { id = user.PersonId }, user);
         }
         [HttpDelete("{id}")]
-        public async Task<ActionResult<User>> DeleteUser(long id)
+        public async Task<ActionResult<Person>> DeleteUser(long id)
         {
-            var user = await _context.Users.FindAsync(id);
+            var user = await _context.Persons.FindAsync(id);
             if (user == null)
             {
                 return NotFound();
             }
 
-            _context.Users.Remove(user);
+            _context.Person.Remove(user);
             await _context.SaveChangesAsync();
 
             return user;
