@@ -1,6 +1,6 @@
 <div class="contents">
   <p>Sign in</p>
-  <form [formGroup]="loginForm" class="example-form" (submit)="GetUserData(Usn.value, Pw.value)">
+  <form [formGroup]="loginForm" class="example-form" (submit)="CheckIfUserMatches(Usn.value, Pw.value)">
       <mat-form-field class="example-full-width">
         <input formControlName="Username" #Usn matInput placeholder="Username" type="text" required>
       </mat-form-field>  <br>
@@ -8,7 +8,7 @@
       <mat-form-field class="example-full-width">
         <input formControlName="Password" #Pw matInput placeholder="Password" type="password" required>
       </mat-form-field><br>
-         <input [disabled]="!loginForm.valid" type="submit" placeholder="Submit" id="sub">
+         <input [disabled]="!loginForm.valid" type="submit" value="Submit" id="sub">
     </form>
   
   </div>

@@ -16,4 +16,7 @@ export class ConfigService {
 
     return this.HttpClient.post<UserService>(`${this.url}`,object);
   }
+  GetUsers():Observable<UserService[]>{
+    return this.HttpClient.get<UserService[]>(`${this.url}`);
+  }
 }

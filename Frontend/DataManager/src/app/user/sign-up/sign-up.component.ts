@@ -3,6 +3,7 @@ import {UserService} from '../../user.service';
 import {FormGroup, Validators, FormControl, FormBuilder, EmailValidator, MinLengthValidator} from '@angular/forms';
 import {ConfigService} from '../../config.service';
 import {Router} from '@angular/router';
+import { Token } from '@angular/compiler';
 
 
 @Component({
@@ -50,7 +51,7 @@ export class SignUpComponent implements OnInit {
           
         }
       });
-      localStorage.setItem('currentuser', JSON.stringify({token:"test", username:this.user.Username}));
+      localStorage.setItem('currentuser', JSON.stringify({token:Token, username:this.user.Username}));
     }
   }
 
