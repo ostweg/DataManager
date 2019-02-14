@@ -108,20 +108,6 @@ code {
 
 }
 
-.outer {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-
-.inner {
-    position: relative;
-    display: grid;
-    grid-template: 10% 1fr 1fr 1fr 10% / 10% 10% 1fr 1fr 1fr 20%;
-    min-height: 100%;
-    width: 100%;
-}
-
 /* **********  NAVIGATION */
 
 .navigation {
@@ -352,7 +338,7 @@ div.create {
     background: white;
     bottom: 0;
     border: white dotted 0;
-    color: white
+    color: white;
     left: 0;
     width: 1px;
     font-size: 1px;
@@ -424,7 +410,7 @@ div.create {
     background: white;
     bottom: 0;
     border: white dotted 0;
-    color: white
+    color: white;
     left: 0;
     width: 1px;
     font-size: 1px;

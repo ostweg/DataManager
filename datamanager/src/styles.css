@@ -1,4 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("css-imports/_reset.css");
 @import url("css-imports/_base.css");
 @import url("css-imports/_classes.css");
-@import url("css-imports/_reset.css");
+@import url("css-imports/_classes-2.css");
+@import url("css-imports/_classes-3.css");
+
+body {
+  background: #aaaafc;
+}
+
+.card a {
+  line-height: 126px;
+  padding: 20px;
+}
+
+.navlist li {
+  border: #fff0 solid 1px;
+  background: #0000;
+  padding: 5px;
+  transition: 180ms
+}
+
+.navlist li a {
+  width: 100%;
+  text-transform: capitalize;
+}
+
+.navlist li:hover {
+  border: #000084 solid 1px;
+  background: white;
+}
+
+.navlist li:hover a {
+  color: #000084;
+}

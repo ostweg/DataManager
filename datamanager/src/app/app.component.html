@@ -1,9 +1,14 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div class="header align-center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<div class="align-center">
+  <div class="nav">
+    <ul class="navlist">
+      <div id='box1'><li><a href="">home</a></li></div>
+      <div id='box2'><li><a [routerLink]="['/filebrowser/']">filebrowser</a></li></div>
+      <div id='box3'><li><a href="">sign in</a></li></div>
+      <div id='box4'><li><a href="">about us</a></li></div>
+    </ul>
+  </div>
+  <svg class="banner" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="background-color:rgb(221,238,211)"><line stroke="#995" stroke-width="5" opacity="0.3" x1="142" y1="5" x2="-3" y2="53"></line><line stroke="rgb(164,9,86)" stroke-width="4" opacity="0.3" x1="35" y1="70" x2="31" y2="-6"></line><line stroke="#aff" stroke-width="3" opacity="0.3" x1="-45" y1="-32" x2="-7" y2="32"></line><line stroke="#025" stroke-width="1" opacity="0.3" x1="26" y1="45" x2="34" y2="-31"></line><line stroke="#20d" stroke-width="1" opacity="0.3" x1="-41" y1="91" x2="91" y2="101"></line><line stroke="rgb(74,71,19)" stroke-width="3" opacity="0.3" x1="129" y1="99" x2="64" y2="72"></line><line stroke="rgb(210,183,60)" stroke-width="5" opacity="0.3" x1="-37" y1="46" x2="-48" y2="24"></line><line stroke="#daf689" stroke-width="5" opacity="0.3" x1="-24" y1="-20" x2="47" y2="-49"></line><line stroke="#bb7ccf" stroke-width="3" opacity="0.3" x1="134" y1="88" x2="-7" y2="4"></line><line stroke="rgb(7,135,203)" stroke-width="5" opacity="0.3" x1="23" y1="-13" x2="48" y2="-12"></line><line stroke="rgb(231,110,142)" stroke-width="3" opacity="0.3" x1="67" y1="80" x2="-44" y2="78"></line><line stroke="#8118fa" stroke-width="4" opacity="0.3" x1="-8" y1="117" x2="15" y2="-31"></line><line stroke="#5a1fcb" stroke-width="2" opacity="0.3" x1="145" y1="100" x2="-22" y2="53"></line><line stroke="#136716" stroke-width="3" opacity="0.3" x1="-23" y1="56" x2="138" y2="87"></line><line stroke="#531" stroke-width="3" opacity="0.3" x1="71" y1="135" x2="94" y2="112"></line><line stroke="#1b6bf7" stroke-width="1" opacity="0.3" x1="3" y1="113" x2="4" y2="13"></line><line stroke="rgb(211,5,243)" stroke-width="5" opacity="0.3" x1="114" y1="-12" x2="-36" y2="79"></line><line stroke="#579b21" stroke-width="2" opacity="0.3" x1="-45" y1="60" x2="109" y2="75"></line><line stroke="rgb(54,23,236)" stroke-width="4" opacity="0.3" x1="15" y1="108" x2="24" y2="-14"></line><line stroke="#04723c" stroke-width="4" opacity="0.3" x1="82" y1="137" x2="33" y2="-9"></line><circle cx="138" cy="-4" r="14" opacity="0.3" fill="rgb(13,72,108)"></circle><circle cx="107" cy="115" r="7" opacity="0.3" fill="#f77535"></circle><circle cx="21" cy="-3" r="4" opacity="0.3" fill="#b8a"></circle><circle cx="137" cy="9" r="9" opacity="0.3" fill="rgb(3,156,162)"></circle><circle cx="51" cy="134" r="3" opacity="0.3" fill="#642"></circle><circle cx="82" cy="40" r="11" opacity="0.3" fill="rgb(133,73,45)"></circle><circle cx="0" cy="98" r="5" opacity="0.3" fill="rgb(173,143,8)"></circle><circle cx="49" cy="14" r="8" opacity="0.3" fill="#3f86b4"></circle><circle cx="40" cy="92" r="11" opacity="0.3" fill="rgb(219,91,239)"></circle><circle cx="111" cy="83" r="8" opacity="0.3" fill="rgb(195,19,79)"></circle><polygon fill="rgb(232,18,56)" points="30,-26 52,-6 48,-52" opacity="0.3"></polygon><polygon fill="#2ab2ec" points="41,11 67,0 59,25" opacity="0.3"></polygon><polygon fill="rgb(182,139,187)" points="135,101 164,130 155,88" opacity="0.3"></polygon><polygon fill="rgb(168,128,164)" points="85,-1 86,-23 100,-12" opacity="0.3"></polygon><polygon fill="rgb(153,40,102)" points="57,50 87,73 49,68" opacity="0.3"></polygon><polygon fill="#c35" points="126,145 126,144 109,134" opacity="0.3"></polygon><polygon fill="#123d28" points="-3,33 20,56 -19,35" opacity="0.3"></polygon><polygon fill="#4ff" points="-50,54 -47,70 -54,37" opacity="0.3"></polygon><polygon fill="rgb(142,88,182)" points="114,63 128,73 137,39" opacity="0.3"></polygon><polygon fill="#585d6b" points="69,-50 64,-30 87,-59" opacity="0.3"></polygon></svg>
 </div>
 <div class="content outer">
   <div class="inner">
@@ -11,15 +16,21 @@
       <h2>Here are some links to help you start: </h2>
     </header>
     <ul class="list">
-      <li>
-        <div class="card"><h3><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h3></div>
-      </li>
-      <li>
-        <div class="card"><h3><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h3></div>
-      </li>
-      <li>
-        <div class="card"><h3><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h3></div>
-      </li>
+      <div class="card">
+        <li>
+          <h3><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h3>
+        </li>
+      </div>
+      <div class="card">
+        <li>
+          <h3><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h3>
+        </li>
+      </div>
+      <div class="card">
+        <li>
+          <h3><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h3>
+        </li>
+      </div>
     </ul>
   </div>
 </div>
