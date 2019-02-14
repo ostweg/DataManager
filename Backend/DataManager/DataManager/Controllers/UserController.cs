@@ -39,7 +39,7 @@ namespace TodoApi.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateUser(long id, Person user)
         {
-            if (id != Persons.PersonId)
+            if (id != user.PersonId)
             {
                 return BadRequest();
             }
@@ -52,7 +52,7 @@ namespace TodoApi.Controllers
         [HttpPost]
         public async Task<ActionResult<Person>> PostUser(Person user)
         {
-            _context.Users.Add(user);
+            _context.Persons.Add(user);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetTodoItem", new { id = user.PersonId }, user);
@@ -66,7 +66,7 @@ namespace TodoApi.Controllers
                 return NotFound();
             }
 
-            _context.Person.Remove(user);
+            _context.Persons.Remove(user);
             await _context.SaveChangesAsync();
 
             return user;
