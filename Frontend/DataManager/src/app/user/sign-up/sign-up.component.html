@@ -1,19 +1,20 @@
 <div class="contents">
-    <form [formGroup]="registerForm" class="example-form" (click)="RegisterUserData(Firstname.value,Lastname.value,Username.value,Email.value,Pw.value)">
+  <p>Sign up</p>
+    <form [formGroup]="registerForm" class="example-form" (submit)="RegisterUserData($event)">
         <mat-form-field class="example-full-width">
-          <input formControlName="Firstname" #Firstname matInput placeholder="Firstname" type="text" required>
+          <input formControlName="Firstname" #Firstname matInput placeholder="Firstname" type="text" [(ngModel)]="user.FirstName" required>
         </mat-form-field>  <br>
         <mat-form-field class="example-full-width">
-          <input formControlName="Lastname" #Lastname matInput placeholder="Lastname" type="text" required>
+          <input formControlName="Lastname" #Lastname matInput placeholder="Lastname" type="text" [(ngModel)]="user.LastName" required>
         </mat-form-field>  <br>
         <mat-form-field class="example-full-width">
-          <input formControlName="Username" #Username matInput placeholder="Username" type="text" required>
+          <input formControlName="Username" #Username matInput placeholder="Username" type="text" [(ngModel)]="user.Username" required>
         </mat-form-field>  <br>
         <mat-form-field class="example-full-width">
-          <input formControlName="Email" #Email matInput placeholder="Email" type="text" required>
+          <input formControlName="Email" #Email matInput placeholder="Email" type="text" [(ngModel)]="user.Email" required>
         </mat-form-field>  <br>
         <mat-form-field class="example-full-width">
-          <input formControlName="Password" #Pw matInput placeholder="Password" type="password" required>
+          <input formControlName="Password" #Pw matInput placeholder="Password" type="password" [(ngModel)]="user.Password" required>
         </mat-form-field><br>
            <input [disabled]="!registerForm.valid" type="submit" placeholder="Submit" id="sub">
       </form>

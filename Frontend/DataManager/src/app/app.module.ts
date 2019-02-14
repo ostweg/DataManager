@@ -3,14 +3,13 @@ import { NgModule } from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
 import {MatInputModule,MatButtonModule,MatFormFieldModule,MatRippleModule, MatTabsModule} from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserComponent } from './user/user.component';
 import { SignUpComponent } from './user/sign-up/sign-up.component';
 import { SignInComponent } from './user/sign-in/sign-in.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from'@angular/common/http';
 
 const Approutes : Routes = [
   {path:'home', component:HomeComponent},
@@ -34,8 +33,6 @@ const Modules = [
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent,
-    RegisterComponent,
     UserComponent,
     SignUpComponent,
     SignInComponent,
@@ -47,7 +44,8 @@ const Modules = [
     BrowserAnimationsModule,
     Modules,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   exports: [
     Modules

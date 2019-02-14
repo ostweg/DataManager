@@ -1,9 +1,11 @@
-import { Injectable } from '@angular/core';
 
-@Injectable({
-  providedIn: 'root'
-})
-export class UserService {
-
-  constructor() { }
+export interface UserService {
+  Userid?:number;
+  FirstName:string;
+  LastName:string;
+  Rights:string;
+  Username:string;
+  Password:string;
+  Email:string;
+  
 }

@@ -1,5 +1,6 @@
 <div class="contents">
-  <form [formGroup]="loginForm" class="example-form" (click)="GetUserData(Usn.value, Pw.value)">
+  <p>Sign in</p>
+  <form [formGroup]="loginForm" class="example-form" (submit)="GetUserData(Usn.value, Pw.value)">
       <mat-form-field class="example-full-width">
         <input formControlName="Username" #Usn matInput placeholder="Username" type="text" required>
       </mat-form-field>  <br>
