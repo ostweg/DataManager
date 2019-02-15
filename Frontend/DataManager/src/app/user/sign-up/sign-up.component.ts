@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {UserService} from '../../user.service';
-import {FormGroup, Validators, FormControl, FormBuilder, EmailValidator, MinLengthValidator} from '@angular/forms';
+import {FormGroup, Validators, FormControl, FormBuilder, EmailValidator, MinLengthValidator, AbstractControl} from '@angular/forms';
 import {ConfigService} from '../../config.service';
 import {Router} from '@angular/router';
 import { Token } from '@angular/compiler';
@@ -14,6 +14,7 @@ import { Token } from '@angular/compiler';
 export class SignUpComponent implements OnInit {
   public registerForm: FormGroup;
   user:UserService;
+  Users:UserService[];
   
   constructor(public FormBuilder:FormBuilder, public config:ConfigService, public route: Router) { 
     this.registerForm = this.FormBuilder.group({
@@ -28,8 +29,8 @@ export class SignUpComponent implements OnInit {
       FirstName:undefined,
       LastName:undefined,
       Rights:undefined,
-      Username:undefined,
-      Password:undefined,
+      username:undefined,
+      password:undefined,
       Email:undefined,
       
     }
@@ -37,6 +38,14 @@ export class SignUpComponent implements OnInit {
 
   ngOnInit() {
   }
+  GetUsers(){
+    this.config.GetUsers().subscribe( data => {
+      this.Users = data;
+    })
+  }
+  
+
+
   RegisterUserData(event:any){
     this.route.navigateByUrl('/home');
     if(this.registerForm.valid){
@@ -45,13 +54,13 @@ export class SignUpComponent implements OnInit {
           FirstName:undefined,
           LastName:undefined,
           Rights:undefined,
-          Username:undefined,
-          Password:undefined,
+          username:undefined,
+          password:undefined,
           Email:undefined,
           
         }
       });
-      localStorage.setItem('currentuser', JSON.stringify({token:Token, username:this.user.Username}));
+      localStorage.setItem('currentuser', JSON.stringify({token:Token, username:this.user.username}));
     }
   }
 

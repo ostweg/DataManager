@@ -4,8 +4,8 @@ export interface UserService {
   FirstName:string;
   LastName:string;
   Rights:string;
-  Username:string;
-  Password:string;
+  username:string;
+  password:string;
   Email:string;
   
 }

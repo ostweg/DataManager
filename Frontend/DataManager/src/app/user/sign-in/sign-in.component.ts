@@ -15,6 +15,8 @@ export class SignInComponent implements OnInit {
   Users:UserService[];
   UserNameMatches:boolean;
   UserPasswordMatches:boolean;
+  t:Token;
+  IsWrong:boolean = false;
 
   constructor( public FormBuilder: FormBuilder, public Config: ConfigService, public Route: Router) {
     this.loginForm = this.FormBuilder.group({
@@ -29,18 +31,22 @@ export class SignInComponent implements OnInit {
   GetUsers(){
     this.Config.GetUsers().subscribe(data => {
       this.Users = data;
+
     })
   }
+  
   CheckIfUserMatches(Username:string, Password:string){
-   
-   const UserNameMatches = this.Users.filter(user => user.Username == Username);
-   const UserPasswordMatches = this.Users.filter(userpw => userpw.Password == Password);
-
-   if(UserNameMatches && UserPasswordMatches){
+    console.log(this.Users);
+    console.log(Username);
+   if(this.Users.some(user1 => user1.username == Username)   && this.Users.some(user => user.password == Password)){
     localStorage.setItem('currentuser', JSON.stringify({token:Token, username:Username}));
     this.Route.navigateByUrl('/home');
-   }
     
+   }
+   else {
+    this.IsWrong = true;
+     console.log("error");
+   }
   
   }
 

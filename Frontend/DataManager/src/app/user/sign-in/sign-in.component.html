@@ -8,7 +8,10 @@
       <mat-form-field class="example-full-width">
         <input formControlName="Password" #Pw matInput placeholder="Password" type="password" required>
       </mat-form-field><br>
+      <div class="error" *ngIf="IsWrong">
+        <p>Username or Password is incorrect</p>
+      </div>
          <input [disabled]="!loginForm.valid" type="submit" value="Submit" id="sub">
     </form>
-  
+
   </div>
