@@ -13,10 +13,6 @@ namespace DataManager.Models
         {
 
         }
-
-       
-       
-
         public DbSet<Person> Persons { get; set; }
      
     }
