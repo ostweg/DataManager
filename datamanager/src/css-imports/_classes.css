@@ -90,6 +90,7 @@
 .input:focus-within label {
 	margin-top: -16px;
 	color: #000084;
+	font-size: 0.8em;
 }
 
 .input label {
@@ -98,6 +99,7 @@
 	margin-top: 10px;
 	color: grey;
 	transition: 250ms;
+	font-size: 1em;
 }
 
 .input input {
@@ -155,12 +157,84 @@
 }
 
 /*********************************************/
+/*********************************************/
+
+.ripple {
+  background-position: center;
+  transition: background 0.8s;
+}
+.ripple:hover {
+  background: darkslategrey radial-gradient(circle, transparent 1%, darkslategrey 1%) center/15000%;
+}
+.ripple:active {
+  background-color: grey;
+  background-size: 100%;
+  transition: background 0s;
+}
+
+/*********************************************/
+/*********************************************/
+
+.ripple.standard {
+	background-position: center;
+  transition: background 0.8s;
+}
+
+.ripple.standard:hover {
+	background: DodgerBlue radial-gradient(circle, transparent 1%, DodgerBlue 1%) center/15000%;
+}
+
+.ripple.standard:active {
+	background-color: #6ec0ff;
+	background-color: grey;
+  background-size: 100%;
+  transition: background 0s;
+}
+
+/*********************************************/
+/*********************************************/
+
+.ripple.create {
+	background-position: center;
+  transition: background 0.8s;
+}
+
+.ripple.create:hover {
+	background: limeGreen radial-gradient(circle, transparent 1%, limeGreen 1%) center/15000%;
+}
+
+.ripple.create:active {
+	background-color: lightGreen;
+	background-color: grey;
+  background-size: 100%;
+  transition: background 0s;
+}
+
+/*********************************************/
+/*********************************************/
+
+.ripple.delete {
+	background-position: center;
+  transition: background 0.8s;
+}
+
+.ripple.delete:hover {
+	background: Crimson radial-gradient(circle, transparent 1%, Crimson 1%) center/15000%;
+}
+
+.ripple.delete:active {
+	background-color: lightCoral;
+	background-color: grey;
+  background-size: 100%;
+  transition: background 0s;
+}
+
+/********************************************/
 
 @media screen and (min-width: 960px) {
 	.navlist {
 		display: flex;
 		flex-direction: row;
 		flex-wrap: nowrap;
-		flex-basis: 200px;
 	}
 }

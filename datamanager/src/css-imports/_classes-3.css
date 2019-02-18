@@ -30,38 +30,46 @@ code {
     border-radius: 10px;
 }
 
-/* ************************************************************************** */
-/* ***************************** SUBMIT STANDARD **************************** */
-/* ************************************************************************** */
-.submit-standard {
-    background-color: DodgerBlue;
+/******************************************************************************/
+
+.submit {
+    background-color: darkslategrey;
     color: #fff;
     cursor: pointer;
     border-radius: 3px;
     border: none;
     padding: 9px;
     transition: 200ms;
+    outline: none;
 }
 
-.submit-standard:hover {
-    background-color: lightblue;
+.submit:hover {
+    background-color: grey;
+    color: #fff;
+}
+
+/* ************************************************************************** */
+/* ***************************** SUBMIT STANDARD **************************** */
+/* ************************************************************************** */
+.submit.standard {
+    background-color: DodgerBlue;
+    color: #fff;
+}
+
+.submit.standard:hover {
+    background-color: #6ec0ff;
     color: #fff;
 }
 
 /* ************************************************************************** */
 /* ***************************** SUBMIT CREATE ****************************** */
 /* ************************************************************************** */
-.submit-create {
+.submit.create {
     background-color: limeGreen;
     color: #fff;
-    cursor: pointer;
-    border-radius: 3px;
-    border: none;
-    padding: 9px;
-    transition: 200ms;
 }
 
-.submit-create:hover {
+.submit.create:hover {
     background-color: lightGreen;
     color: #fff;
 }
@@ -70,17 +78,12 @@ code {
 /* ************************************************************************** */
 /* ***************************** SUBMIT DELETE ****************************** */
 /* ************************************************************************** */
-.submit-delete {
+.submit.delete {
     background-color: Crimson;
     color: #fff;
-    cursor: pointer;
-    border-radius: 3px;
-    border: none;
-    padding: 9px;
-    transition: 200ms;
 }
 
-.submit-delete:hover {
+.submit.delete:hover {
     background-color: lightCoral;
     color: #fff;
 }

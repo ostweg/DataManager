@@ -14,23 +14,31 @@ body {
   padding: 20px;
 }
 
-.navlist li {
+.nav {
+  position: relative;
+}
+
+.navlist {
+  height: 100%;
+}
+
+.navlist div {
   border: #fff0 solid 1px;
   background: #0000;
   padding: 5px;
-  transition: 180ms
+  transition: 180ms;
 }
 
-.navlist li a {
+.navlist div a {
   width: 100%;
   text-transform: capitalize;
 }
 
-.navlist li:hover {
+.navlist div:hover {
   border: #000084 solid 1px;
   background: white;
 }
 
-.navlist li:hover a {
+.navlist div:hover a {
   color: #000084;
 }
