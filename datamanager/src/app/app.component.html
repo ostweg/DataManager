@@ -2,9 +2,9 @@
 <div class="align-center">
   <div class="nav">
     <ul class="navlist">
-      <div id='box1'><li><a href="">home</a></li></div>
-      <div id='box2'><li><a [routerLink]="['/filebrowser/']">filebrowser</a></li></div>
-      <div id='box3'><li><a href="">sign in</a></li></div>
+      <div id='box1'><li><a routerLink="/home">home</a></li></div>
+      <div id='box2'><li><a routerLink="/filebrowser">filebrowser</a></li></div>
+      <div id='box3'><li><a href="">shop</a></li></div>
       <div id='box4'><li><a href="">about us</a></li></div>
     </ul>
   </div>
@@ -12,26 +12,22 @@
 </div>
 <div class="content outer">
   <div class="inner">
-    <header>
-      <h2>Here are some links to help you start: </h2>
-    </header>
-    <ul class="list">
-      <div class="card">
-        <li>
-          <h3><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h3>
-        </li>
+    <div class="modal hidden">
+      <div class="contentmodal">
+        <div class="input">
+          <label for="searchbar">Search: </label>
+          <input id="searchbar" name="search" type="search">
+        </div>
+        <div class="input">
+          <label for="username_input">Username: </label>
+          <input id="username_input" name="username" type="text">
+        </div>
+        <div class="input">
+          <label for="password_input">Password: </label>
+          <input id="password_input" name="password" type="password">
+        </div>
       </div>
-      <div class="card">
-        <li>
-          <h3><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h3>
-        </li>
-      </div>
-      <div class="card">
-        <li>
-          <h3><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h3>
-        </li>
-      </div>
-    </ul>
+    </div>
+    <router-outlet></router-outlet>
   </div>
 </div>
-<router-outlet></router-outlet>
