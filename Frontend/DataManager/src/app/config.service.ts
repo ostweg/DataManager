@@ -8,6 +8,7 @@ import {Observable} from 'rxjs';
 })
 export class ConfigService {
   private url = 'http://localhost:5000/api/user';
+  private urlForAuth = 'https://localhost:5001/persons/authenticate';
 
   constructor(private HttpClient:HttpClient) { 
 
@@ -19,4 +20,8 @@ export class ConfigService {
   GetUsers():Observable<UserService[]>{
     return this.HttpClient.get<UserService[]>(`${this.url}`);
   }
+  PostPerson(object:UserService):Observable<UserService>{
+    return this.HttpClient.post<UserService>(`${this.urlForAuth}`,object);
+  }
+ 
 }
