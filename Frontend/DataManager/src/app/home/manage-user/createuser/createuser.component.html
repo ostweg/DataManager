@@ -1,0 +1,22 @@
+<div class="contents">
+    <p>Add Users</p>
+      <form [formGroup]="registerForm" class="example-full-width" (submit)="RegisterUserData($event)">
+          <mat-form-field class="example-full-width">
+            <input formControlName="Firstname" #Firstname matInput placeholder="Firstname" type="text" [(ngModel)]="user.FirstName" required>
+          </mat-form-field>  <br>
+          <mat-form-field class="example-full-width">
+            <input formControlName="Lastname" #Lastname matInput placeholder="Lastname" type="text" [(ngModel)]="user.LastName" required>
+          </mat-form-field>  <br>
+          <mat-form-field class="example-full-width">
+            <input formControlName="Username" #Username matInput placeholder="Username" type="text" [(ngModel)]="user.Username" required>
+          </mat-form-field>  <br>
+          <mat-form-field class="example-full-width">
+            <input formControlName="Email" #Email matInput placeholder="Email" type="text" [(ngModel)]="user.Email" required>
+          </mat-form-field>  <br>
+          <mat-form-field class="example-full-width">
+            <input formControlName="Password" #Pw matInput placeholder="Password" type="password" [(ngModel)]="user.Password" required>
+          </mat-form-field><br>
+             <input [disabled]="!registerForm.valid" id="sub" type="submit" value="Submit"  >
+        </form>
+      
+      </div>

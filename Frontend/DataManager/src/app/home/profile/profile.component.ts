@@ -13,13 +13,12 @@ export class ProfileComponent implements OnInit {
   constructor(public Route:Router, public Config:ConfigService) { }
   CurrentUserName:string;
   CurrentUserToken:string;
+  Status:string;
   User:UserService;
   test:string = "was";
   ngOnInit() {
     var CurrentUser = JSON.parse(localStorage.getItem('currentuser'));
     this.CurrentUserName = CurrentUser.username;
-    this.CurrentUserToken = CurrentUser.token;
-    console.log(this.CurrentUserName);
     this.GetUsers();
   }
   Logout(){
@@ -27,9 +26,15 @@ export class ProfileComponent implements OnInit {
     this.Route.navigateByUrl('/sigin');
   }
   GetUsers(){
-    console.log(this.CurrentUserName);
     this.Config.GetUsers().subscribe( data => {
       this.User = data.find(x => x.username == this.CurrentUserName);
+     
+      if(this.User.Rights == "rwd"){
+        this.Status = "Admin";
+      }else {
+        this.Status = "User";
+      }
+     
     });
     
   }

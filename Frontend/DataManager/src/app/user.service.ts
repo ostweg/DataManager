@@ -7,7 +7,7 @@ export interface UserService {
   username:string;
   password:string;
   Email?:string;
-  OrganisationName?:string;
+  organisationName?:string;
   Token?:string;
   
 }

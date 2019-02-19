@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import {MatInputModule,MatButtonModule,MatFormFieldModule,MatRippleModule, MatTabsModule, MatTableModule} from '@angular/material';
+import {MatInputModule,MatButtonModule,MatFormFieldModule,MatRippleModule, MatTabsModule, MatTableModule, MatPaginatorModule} from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserComponent } from './user/user.component';
 import { SignUpComponent } from './user/sign-up/sign-up.component';
@@ -17,10 +17,14 @@ import { FileManagerComponent } from './home/file-manager/file-manager.component
 import { ProfileComponent } from './home/profile/profile.component';
 import { ManageUserComponent } from './home/manage-user/manage-user.component';
 import { UserlistComponent } from './home/manage-user/userlist/userlist.component';
-
+import {MatIconModule} from '@angular/material/icon';
+import {MatSortModule} from '@angular/material/sort';
+import { CreateuserComponent } from './home/manage-user/createuser/createuser.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 const Approutes : Routes = [
-  {path:'home', component:HomeComponent, /*canActivate: [AuthGuard]*/},
+  {path:'home', component:HomeComponent, canActivate: [AuthGuard]},
   {path:'signup', component:UserComponent,
    children: [{path:'', component:SignUpComponent}]},
    {path:'login', component:UserComponent,
@@ -28,6 +32,7 @@ const Approutes : Routes = [
    {path:'**', redirectTo:'/login', pathMatch:'full'}
 ];
 const Modules = [
+  MatPaginatorModule,
   MatInputModule,
    BrowserAnimationsModule,
    MatButtonModule,
@@ -35,7 +40,8 @@ const Modules = [
    MatTabsModule,
    MatInputModule,
    MatRippleModule,
-   MatTableModule
+   MatTableModule,
+   MatIconModule
 ];
 export function tokenGetters(){
   return localStorage.getItem(JSON.parse(JSON.stringify('currentuser')));
@@ -57,6 +63,7 @@ const JWT_Module_Options: JwtModuleOptions = {
     ProfileComponent,
     ManageUserComponent,
     UserlistComponent,
+    CreateuserComponent,
     
     
   ],
@@ -68,10 +75,19 @@ const JWT_Module_Options: JwtModuleOptions = {
     Modules,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatPaginatorModule,
+    MatIconModule,
+    MatSortModule,
+    MatDialogModule,
+    MatSnackBarModule
+  ],
+  entryComponents: [
+    CreateuserComponent
   ],
   exports: [
-    Modules
+    Modules,
+    CreateuserComponent
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

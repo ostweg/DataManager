@@ -30,6 +30,7 @@ export class SignUpComponent implements OnInit {
       FirstName:undefined,
       LastName:undefined,
       Rights:"rwd",
+      organisationName:undefined,
       username:undefined,
       password:undefined,
       Email:undefined,
@@ -54,15 +55,16 @@ export class SignUpComponent implements OnInit {
           FirstName:undefined,
           LastName:undefined,
           Rights:"rwd",
+          organisationName:undefined,
           username:undefined,
           password:undefined,
           Email:undefined,
           
         }
       });
-      localStorage.setItem('currentuser', JSON.stringify({token:"Token", username:this.user.username, org:this.user.OrganisationName}));
-      this.route.navigateByUrl('/home');
     }
+    //localStorage.setItem('currentuser',JSON.stringify(username:this.user.username.toString()));
+    this.route.navigateByUrl('/signin');
   }
 
 }

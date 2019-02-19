@@ -7,11 +7,13 @@ import {Router} from '@angular/router';
 })
 export class AuthGuardService {
 
+  
   constructor(public auth: AuthService, public router:Router) { }
 
   canActivate():boolean {
-    if(!this.auth.IsAuthenticated()) {
-      this.router.navigate(['login'])
+    const user = JSON.parse(localStorage.getItem('currentuser'));
+    if(user.username == null) {
+      this.router.navigateByUrl('/login');
     }
     return true;
   }

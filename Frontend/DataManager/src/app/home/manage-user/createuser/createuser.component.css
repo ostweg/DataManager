@@ -1,0 +1,10 @@
+.Org {
+    text-decoration: line-through;
+}
+#sub {
+    border:none;
+    height:40px;
+    width:120px;
+    color:white;
+    background-color:#3A3B94;
+  }

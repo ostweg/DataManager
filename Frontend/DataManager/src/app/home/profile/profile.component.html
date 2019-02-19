@@ -1,7 +1,7 @@
-Welcome <b>{{this.User.username }} </b>! <br>
-Organisation: <b>{{this.User.organisationName}}</b><br>
-Email: <b>{{this.User.email}}</b><br>
-Rights: <b>{{this.User.rights}}</b><br>
-
+Welcome <b>{{this.User?.username }} </b>! <br>
+Organisation: <b>{{this.User?.organisationName}}</b><br>
+Email: <b>{{this.User?.email}}</b><br>
+Rights: <b>{{this.User?.rights}}</b><br>
+Status: <b>{{Status}}</b><br>
 
 <button type="submit" (click)="Logout()">Logout</button>

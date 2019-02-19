@@ -23,5 +23,11 @@ export class ConfigService {
   PostPerson(object:UserService):Observable<UserService>{
     return this.HttpClient.post<UserService>(`${this.urlForAuth}`,object);
   }
+  DelteUser(object:any):Observable<any>{
+    return this.HttpClient.delete<any>(`${this.url}/${object.personId}`);
+  }
+  GlobalData(){
+    this.GetUsers();
+  }
  
 }
