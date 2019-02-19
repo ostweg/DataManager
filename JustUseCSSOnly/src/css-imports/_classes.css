@@ -146,14 +146,26 @@
 
 .browser {
 	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
+	flex-direction: column;
+	flex-wrap: nowrap;
 }
 
 .browser .item {
 	margin: 24px;
 	text-align: center;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+}
 
+.browser .item div {
+	display: flex;
+	align-items: center;
+  justify-content: center;
+}
+
+.browser .item div:not(:last-child) {
+	border-left: 1px solid #0005;
 }
 
 /*********************************************/
