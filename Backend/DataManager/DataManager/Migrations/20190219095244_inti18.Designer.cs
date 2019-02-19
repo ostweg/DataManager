@@ -3,14 +3,16 @@ using System;
 using DataManager.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DataManager.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20190219095244_inti18")]
+    partial class inti18
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -26,11 +28,7 @@ namespace DataManager.Migrations
 
                     b.Property<string>("FileSize");
 
-                    b.Property<long?>("PersonId");
-
                     b.HasKey("FileId");
-
-                    b.HasIndex("PersonId");
 
                     b.ToTable("Files");
                 });
@@ -41,6 +39,8 @@ namespace DataManager.Migrations
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Email");
+
+                    b.Property<long?>("FileId");
 
                     b.Property<string>("FirstName");
 
@@ -58,14 +58,16 @@ namespace DataManager.Migrations
 
                     b.HasKey("PersonId");
 
+                    b.HasIndex("FileId");
+
                     b.ToTable("Persons");
                 });
 
-            modelBuilder.Entity("DataManager.Models.File", b =>
+            modelBuilder.Entity("DataManager.Models.Person", b =>
                 {
-                    b.HasOne("DataManager.Models.Person", "Person")
+                    b.HasOne("DataManager.Models.File", "File")
                         .WithMany()
-                        .HasForeignKey("PersonId");
+                        .HasForeignKey("FileId");
                 });
 #pragma warning restore 612, 618
         }

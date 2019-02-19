@@ -5,6 +5,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DataManager.Models;
+using System.IdentityModel.Tokens.Jwt;
+using System.Text;
+using DataManager.Helpers;
+using Microsoft.IdentityModel.Tokens;
+using System.Security.Claims;
+using System;
+
 
 namespace TodoApi.Controllers
 {
@@ -13,18 +20,11 @@ namespace TodoApi.Controllers
     public class UserController : ControllerBase
     {
         private readonly  DataContext _context;
-      
+        private readonly AppSettings _appSettings;
 
         public UserController(DataContext context)
         {
             _context = context;
-            if (_context.Persons.Count() == 0)
-            {
-                // Create a new TodoItem if collection is empty,
-                // which means you can't delete all TodoItems.
-                _context.Persons.Add(new Person { FirstName = "test" });
-                _context.SaveChanges();
-            }
         
         }
         [HttpGet]
@@ -67,7 +67,7 @@ namespace TodoApi.Controllers
             return CreatedAtAction("GetTodoItem", new { id = user.PersonId }, user);
         }
         [HttpPost("authenticate")]
-        public IActionResult Authenticate([FromBody]Person personParam){
+        /*public IActionResult Authenticate([FromBody]Person personParam){
             var person = _context.Persons.SingleOrDefault(x=>x.Username == personParam.Username && x.Password == personParam.Password);
 
             if(person == null)
@@ -89,7 +89,7 @@ namespace TodoApi.Controllers
             person.Password = null;
 
             return person;
-        }
+        }*/
         [HttpDelete("{id}")]
         public async Task<ActionResult<Person>> DeleteUser(long id)
         {
