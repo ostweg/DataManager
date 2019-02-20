@@ -1,44 +1,41 @@
-import { Component, OnInit } from '@angular/core';
-import {ConfigService} from '../../config.service';
-import {FileService} from '../../interfaces/File.service';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import {Component, OnInit} from '@angular/core';
+import {HttpClient, HttpEventType, HttpRequest} from '@angular/common/http';
+
 @Component({
   selector: 'app-file-manager',
   templateUrl: './file-manager.component.html',
   styleUrls: ['./file-manager.component.css']
 })
 export class FileManagerComponent implements OnInit {
+  public progress:number;
+  public message:string;
 
-  SelectedFile:File;
-  File:File;
-  Files:FileService;
-  ProfileForm:FormGroup;
-  constructor(private config:ConfigService, private fb:FormBuilder) {
-    this.Files = {
-      name:undefined,
-      lastModified:undefined,
-      Type:undefined,
-      Size:undefined
+  constructor(private http:HttpClient){}
+  ngOnInit(){
+  }
+
+  upload(files){
+    if(files.length === 0)
+      return;
+
+    const formData = new FormData();
+
+    for (let file of files){
+      formData.append(file.name, file);
     }
-   }
-
-  ngOnInit() {
-  }
-  FileSelect(event){
-    this.SelectedFile = event.target.files[0];
-  }
-  UploadFile(){
-    console.log(this.SelectedFile)
-    this.config.PostFile(this.SelectedFile).subscribe( data => {
-      /*this.File = {
-        name:data.name,
-        lastModified:data.lastModified,
-        type:data.type,
-        size:data.size
-      };*/
+    const uploadReq = new HttpRequest('POST', 'https://localhost:5001/api/file',formData, {
+      reportProgress: true,
     });
-    
+
+    this.http.request(uploadReq).subscribe(event => {
+      if(event.type === HttpEventType.UploadProgress){
+        this.progress = Math.round(100*event.loaded / event.total);
+      }
+      else if (event.type === HttpEventType.Response){
+        this.message = event.body.toString();
+      }
+    });
+
   }
-  
 
 }

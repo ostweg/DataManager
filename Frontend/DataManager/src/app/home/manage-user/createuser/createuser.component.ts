@@ -88,7 +88,6 @@ export class CreateuserComponent implements OnInit {
   }
   onClose(){
     this.dialog.close();
-    this.Get.Getusers();
   }
 
 }

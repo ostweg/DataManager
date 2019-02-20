@@ -1,4 +1,14 @@
-<h1>File Upload</h1>
+<!--<h1>File Upload</h1>
 <input type="file" style="display: none"(change)="FileSelect($event)" #fileInput>
 <button type="button" (click)="fileInput.click()">Pick File</button>
-<button type="button" (click)="UploadFile()">Upload</button>
+<button type="button" (click)="UploadFile()">Upload</button>-->
+<h1>File Upload</h1>
+<input #file type="file" multiple (change)="upload(file.files)" />
+<br/>
+<span style="font-weight:bold;color:green;" *ngIf="progress > 0 && progress < 100">
+  {{progress}}%
+</span>
+
+<span style="font-weight:bold;color:green;" *ngIf="message">
+  {{message}}
+</span>

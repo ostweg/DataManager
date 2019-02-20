@@ -12,6 +12,7 @@ import {CreateuserComponent} from '../createuser/createuser.component';
 export class UserlistComponent implements OnInit {
   @ViewChild(MatSort) sort:MatSort;
   @ViewChild('paginator') paginator:MatPaginator;
+  IsAdmin:boolean;
   SortedData:UserService[] = [];
 
   constructor(public configs: ConfigService, public dialogs:MatDialog, private snack:MatSnackBar) { 
@@ -26,14 +27,14 @@ export class UserlistComponent implements OnInit {
 
   ngOnInit() {
     this.Getusers();
-    
+
     
   }
  
  
   Getusers(){
     this.configs.GetUsers().subscribe(data1 => {
-      this.UserList = data1;   
+      this.UserList = data1;
       this.dataSource = new MatTableDataSource(this.UserList);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
