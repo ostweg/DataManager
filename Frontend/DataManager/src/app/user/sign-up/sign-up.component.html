@@ -1,6 +1,6 @@
 <div class="contents">
   <p>Sign up</p>
-    <form [formGroup]="registerForm" class="example-form" (submit)="RegisterUserData($event)">
+    <form [formGroup]="registerForm" class="example-form" (submit)="RegisterUserData($event,Username.value)">
         <mat-form-field class="example-full-width">
           <input formControlName="Firstname" #Firstname matInput placeholder="Firstname" type="text" [(ngModel)]="user.FirstName" required>
         </mat-form-field>  <br>

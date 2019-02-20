@@ -39,6 +39,7 @@ export class SignUpComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.GetUsers();
   }
   GetUsers(){
     this.config.GetUsers().subscribe( data => {
@@ -48,23 +49,26 @@ export class SignUpComponent implements OnInit {
   
 
 
-  RegisterUserData(event:any){
-    if(this.registerForm.valid){
+  RegisterUserData(event:any,usn:string) {
+    console.log(usn);
+    localStorage.setItem('currentuser', JSON.stringify({username: usn}));
+    if (this.registerForm.valid) {
       this.config.PostData(this.user).subscribe((data: UserService) => {
         this.user = {
-          FirstName:undefined,
-          LastName:undefined,
-          Rights:"rwd",
-          organisationName:undefined,
-          username:undefined,
-          password:undefined,
-          Email:undefined,
-          
+          FirstName: undefined,
+          LastName: undefined,
+          Rights: "rwd",
+          organisationName: undefined,
+          username: undefined,
+          password: undefined,
+          Email: undefined,
+
         }
       });
     }
+    this.route.navigateByUrl('/home');
     //localStorage.setItem('currentuser',JSON.stringify(username:this.user.username.toString()));
-    this.route.navigateByUrl('/signin');
+
   }
 
 }

@@ -3,6 +3,7 @@ import {ConfigService} from '../../../config.service';
 import {UserService} from '../../../user.service';
 import {MatTableDataSource, Sort, MatSort, MatPaginator, MatDialog,MatSnackBar, MatDialogRef} from '@angular/material';
 import {CreateuserComponent} from '../createuser/createuser.component';
+import {Observable, Subject} from 'rxjs';
 @Component({
   selector: 'app-userlist',
   templateUrl: './userlist.component.html',
@@ -21,26 +22,53 @@ export class UserlistComponent implements OnInit {
 
   listData:MatTableDataSource<any>;
   UserList:UserService[] = [];
-  SearchKey:string;  
-  public dataSource: MatTableDataSource<any>; 
+  OrgName:string;
+  UsersInSameOrg:UserService[];
+  SearchKey:string;
+  UserRight:string;
+  public dataSource: MatTableDataSource<any>;
+  CurrentUserName:string;
 
 
   ngOnInit() {
+    var tokenuser = JSON.parse(localStorage.getItem('currentuser'));
+    this.CurrentUserName = tokenuser.username;
     this.Getusers();
-
+    this.GetOrgName();
+    this.ShowUsers();
+    this.GetCurrentRight();
     
   }
  
  
-  Getusers(){
+  Getusers():Observable<UserService>{
+    let subject: Subject<UserService> = new Subject();
     this.configs.GetUsers().subscribe(data1 => {
-      this.UserList = data1;
-      this.dataSource = new MatTableDataSource(this.UserList);
+      subject.next(data1.find(x => x.username == this.CurrentUserName));
+    });
+    return subject.asObservable();
+
+  }
+  GetOrgName(){
+    this.Getusers().subscribe((us)=> {
+      this.OrgName = us.organisationName;
+      console.log(this.OrgName);
+    });
+  }
+  GetCurrentRight(){
+      this.Getusers().subscribe((right) => {
+        this.UserRight = right.Rights;
+        console.log(this.UserRight);
+      });
+  }
+  ShowUsers(){
+    this.configs.GetUsers().subscribe(da => {
+      console.log(this.OrgName);
+      this.UsersInSameOrg = da.filter(w => w.organisationName == this.OrgName);
+      this.dataSource = new MatTableDataSource(this.UsersInSameOrg);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
-     
     });
-   
   }
   sortData(sort: Sort){
     const data = this.UserList.slice();
