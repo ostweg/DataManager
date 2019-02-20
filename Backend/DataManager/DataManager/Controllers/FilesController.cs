@@ -8,10 +8,11 @@ using DataManager.Models;
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
 using DataManager.Helpers;
+using Microsoft.AspNetCore.Http;
 using Microsoft.IdentityModel.Tokens;
 using System.Security.Claims;
 using System;
-
+using System.IO;
 
 namespace TodoApi.Controllers
 {
@@ -28,58 +29,26 @@ namespace TodoApi.Controllers
         
         }
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<File>>> GetFiles()
+        /* public async Task<ActionResult<IEnumerable<File>>> GetFiles()
         {
             return await _context.Files.ToListAsync();
-        }
-        [HttpGet("{id}")]
-        public async Task<ActionResult<File>> GetFileById(long id)
-        {
-            var file = await _context.Files.FindAsync(id);
-
-            if (file == null)
-            {
-                return NotFound();
-            }
-
-            return file;
-        }
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateFile(long id, File file)
-        {
-            if (id != file.FileId)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(file).State = EntityState.Modified;
-            await _context.SaveChangesAsync();          
-
-            return NoContent();
-        }
+        }*/
         [HttpPost]
-       
-        public async Task<ActionResult<Person>> PostFile(File file)
+        public async Task<ActionResult> PostFile(IFormFile file)
         {
-            _context.Files.Add(file);
-            await _context.SaveChangesAsync();
+            if(file == null || file.Length == 0)
+                return Content("file not selected");
+            var path = Path.Combine(Directory.GetCurrentDirectory() + "/wwwroot",
+                                    file.FileName);
 
-            return CreatedAtAction("GetTodoItem", new { id = file.FileId }, file);
-        }
-        [HttpDelete("{id}")]
-        public async Task<ActionResult<File>> DeleteUser(long id)
-        {
-            var file = await _context.Files.FindAsync(id);
-            if (file == null)
+            using (var stream = new FileStream(path, FileMode.Create))
             {
-                return NotFound();
+                await file.CopyToAsync(stream);
             }
 
-            _context.Files.Remove(file);
-            await _context.SaveChangesAsync();
-
-            return file;
+            return RedirectToAction("Files");
         }
+        
 
     }
 }

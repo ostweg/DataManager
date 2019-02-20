@@ -10,7 +10,10 @@ namespace DataManager.Models
     {
         public long FileId { get; set; }
         public string FileName { get; set; }
-        public string FileSize {get;set;}
+        public int LastModified {get;set;}
+        public DateTime LastModifiedDate {get;set;}
+        public string WebKitRelativePath {get;set;}
+        public int Size {get;set;}
         public Person Person {get;set;}
 
     }

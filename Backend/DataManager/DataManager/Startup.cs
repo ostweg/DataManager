@@ -16,6 +16,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Microsoft.Extensions.FileProviders;
+using System.IO;
 using DataManager.Models;
 
 namespace DataManager
@@ -33,6 +35,10 @@ namespace DataManager
         public void ConfigureServices(IServiceCollection services)
         {
          
+             services.AddSingleton<IFileProvider>(
+                new PhysicalFileProvider(
+                    ConfigurationPath.Combine(Directory.GetCurrentDirectory() + "/wwwroot")));
+
 
             services.AddDbContext<DataContext>(opt => opt.UseMySql("server=localhost;database=DataManager;user=root;password=w2ter2468"));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
@@ -63,6 +69,14 @@ namespace DataManager
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+             app.UseMvc(routes =>
+           {
+               routes.MapRoute(
+                   name: "default",
+                   template: "{controller=Files}/{action=Index}/{id?}"
+                   );
+           });
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
