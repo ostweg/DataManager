@@ -8,13 +8,15 @@ namespace DataManager.Models
 {
     public class Person
     {
-        public int PersonId { get; set; }
+        public long PersonId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Rights {get;set;}
+        public string OrganisationName {get;set;}
         public string Email { get; set; }
         public string Username { get; set; }
-        public string Passowrd { get; set; }
+        public string Password { get; set; }
+        public string Token {get;set;}
 
     }
 }

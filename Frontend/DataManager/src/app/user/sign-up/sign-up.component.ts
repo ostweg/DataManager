@@ -20,6 +20,7 @@ export class SignUpComponent implements OnInit {
     this.registerForm = this.FormBuilder.group({
       Firstname: ['',Validators.required],
       Lastname: ['', Validators.required],
+      Organisation: ['', Validators.required],
       Username: ['', Validators.required],
       Email: ['', [Validators.required,  Validators.email]],
       Password: ['',[Validators.required, Validators.minLength(5)]]
@@ -28,7 +29,8 @@ export class SignUpComponent implements OnInit {
     this.user = {
       FirstName:undefined,
       LastName:undefined,
-      Rights:undefined,
+      Rights:"rwd",
+      organisationName:undefined,
       username:undefined,
       password:undefined,
       Email:undefined,
@@ -47,21 +49,22 @@ export class SignUpComponent implements OnInit {
 
 
   RegisterUserData(event:any){
-    this.route.navigateByUrl('/home');
     if(this.registerForm.valid){
       this.config.PostData(this.user).subscribe((data: UserService) => {
         this.user = {
           FirstName:undefined,
           LastName:undefined,
-          Rights:undefined,
+          Rights:"rwd",
+          organisationName:undefined,
           username:undefined,
           password:undefined,
           Email:undefined,
           
         }
       });
-      localStorage.setItem('currentuser', JSON.stringify({token:Token, username:this.user.username}));
     }
+    //localStorage.setItem('currentuser',JSON.stringify(username:this.user.username.toString()));
+    this.route.navigateByUrl('/signin');
   }
 
 }

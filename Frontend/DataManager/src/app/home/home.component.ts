@@ -9,17 +9,10 @@ import {Router} from '@angular/router';
 export class HomeComponent implements OnInit {
 
   constructor(public route:Router) { }
-  CurrentUserName:string;
-  CurrentUserToken:string;
+ 
   ngOnInit() {
-    var CurrentUser = JSON.parse(localStorage.getItem('currentuser'));
-    this.CurrentUserName = CurrentUser.username;
-    this.CurrentUserToken = CurrentUser.token;
-    console.log(this.CurrentUserName);
+   
   }
-  Logout(){
-    localStorage.removeItem('currentuser');
-    this.route.navigateByUrl('/sigin');
-  }
+
 
 }

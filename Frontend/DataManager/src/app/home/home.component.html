@@ -1,4 +1,23 @@
-Welcome back {{this.CurrentUserName}} ! 
 
-
-<input type="submit" value="Logout" (click)="Logout()">
+<div class="content">
+    <mat-tab-group mat-align-tabs="center"> 
+    <mat-tab label="Your Profile">
+        <div class="c2">
+            <app-profile></app-profile>
+        </div>  
+    </mat-tab>
+      <mat-tab label="Manage User">
+        <div class="c1">
+          <app-manage-user></app-manage-user>
+        </div>
+      </mat-tab>
+      <mat-tab label="File Manager">
+        <div class="c2">
+            <app-file-manager></app-file-manager>
+        </div>  
+      </mat-tab>
+      <router-outlet></router-outlet>  
+    </mat-tab-group>
+    </div>
+    
+    

@@ -2,7 +2,7 @@
 
 namespace DataManager.Migrations
 {
-    public partial class InitialCreate2 : Migration
+    public partial class test : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

@@ -13,6 +13,8 @@ export class SignInComponent implements OnInit {
 
   public loginForm:FormGroup;
   Users:UserService[];
+  User:UserService;
+  UserToken:UserService;
   UserNameMatches:boolean;
   UserPasswordMatches:boolean;
   t:Token;
@@ -26,28 +28,29 @@ export class SignInComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.GetUsers();
+   this.GetUsers();
   }
   GetUsers(){
     this.Config.GetUsers().subscribe(data => {
       this.Users = data;
-
-    })
+      console.log(this.Users)
+    });
   }
   
+  
   CheckIfUserMatches(Username:string, Password:string){
-    console.log(this.Users);
+
     console.log(Username);
-   if(this.Users.some(user1 => user1.username == Username)   && this.Users.some(user => user.password == Password)){
-    localStorage.setItem('currentuser', JSON.stringify({token:Token, username:Username}));
+
+   if(this.Users.find(user1 => user1.username == Username && user1.password == Password)){
+    localStorage.setItem('currentuser', JSON.stringify({username:Username})); //Add IsLoggedIn to UserService and check if it is true instead of token.
     this.Route.navigateByUrl('/home');
-    
-   }
-   else {
+    }
+    else {
     this.IsWrong = true;
      console.log("error");
    }
   
+  
   }
-
 }
