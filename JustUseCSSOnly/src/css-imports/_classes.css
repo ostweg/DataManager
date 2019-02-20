@@ -179,9 +179,11 @@
 }
 
 .browser .item .item-action {
-	position: relative;
-	left: 750px;
-	float: right;
+	flex: 1;
+}
+
+.browser .item .item-information {
+	flex: 1;
 }
 
 /*********************************************/
