@@ -1,0 +1,270 @@
+.shown { display: block; }
+.hidden { display: none; }
+.align-center { text-align: center; }
+
+.uppercase { text-transform: uppercase; }
+.lowercase { text-transform: lowercase; }
+.capitalize { text-transform: capitalize;}
+
+.header {
+	padding: 10px;
+	margin: 8px;
+}
+
+.button {
+	background: none;
+	border: none;
+	width: 192px;
+	height: 50px;
+}
+
+.content.outer {
+	margin: 20px 0;
+	position: relative;
+	height: auto;
+	padding-bottom: 256px;
+	display: grid;
+	grid-template-columns: 20% 20% 20% 20% 20%;
+	grid-template-rows: 20% 20% 20% 20% 20%;
+	background: #f5f3f4;
+}
+
+.inner {
+	grid-column: 2 / 5;
+	grid-row: 2 / 5;
+}
+
+.inner header {
+	text-align: center;
+}
+
+.list {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	list-style: none;
+}
+
+.card {
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	border: black 1px solid;
+	margin: 10px;
+	padding: 4px;
+	background: #fff4;
+}
+
+.banner {
+	width: 100%;
+	height: 360px;
+	padding: 16px;
+}
+
+.nav {
+	padding: 24px;
+	background-color: #000084;
+}
+
+.nav ul li a {
+	padding: 20px 80px;
+	color: white;
+}
+
+.navlist { list-style: none;}
+
+#box1, #box2, #box3, #box4 {
+	flex: 1;
+}
+
+/************************************************************/
+
+.input {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	width: 300px;
+	margin: 32px;
+}
+
+.input:focus-within label {
+	margin-top: -16px;
+	color: #000084;
+	font-size: 0.8em;
+}
+
+.input label {
+	order: -1;
+	position: absolute;
+	margin-top: 10px;
+	color: grey;
+	transition: 250ms;
+	font-size: 1em;
+}
+
+.input input {
+	padding: 8px 1px;
+	border: none;
+	background: none;
+	border-bottom: 1px solid grey;
+}
+
+.input input:focus {
+	padding: 6px;
+	border: none;
+	background: none;
+	box-shadow: none;
+	outline: none;
+	border-bottom: 2px solid #000084;
+}
+
+/**************************************************/
+
+.modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: #0009;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+}
+
+.contentmodal {
+	background: #fffd;
+	width: 500px;
+	height: auto;
+	text-align: center;
+	padding: 50px;
+	position: relative;
+	top: 33%;
+	left: 33%;
+	border: 2px dotted #0004;
+}
+
+/*********************************************/
+
+.browser {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	width: 100%;
+}
+
+.browser .item {
+	margin: 24px;
+	text-align: center;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	width: 100%;
+}
+
+.browser .item div {
+	display: flex;
+	align-items: center;
+  justify-content: center;
+	padding: 1px 4px;
+	margin: 4px;
+}
+
+.browser .item-information img {
+	margin: 6px;
+}
+
+.browser .item-action button {
+	width: 80px;
+	height: 32px;
+	margin: 6px;
+}
+
+.browser .item .item-action {
+	flex: 1;
+}
+
+.browser .item .item-information {
+	flex: 1;
+}
+
+/*********************************************/
+/*********************************************/
+
+.ripple {
+  background-position: center;
+  transition: background 0.8s;
+}
+.ripple:hover {
+  background: darkslategrey radial-gradient(circle, transparent 1%, darkslategrey 1%) center/15000%;
+}
+.ripple:active {
+  background-color: grey;
+  background-size: 100%;
+  transition: background 0s;
+}
+
+/*********************************************/
+/*********************************************/
+
+.ripple.standard {
+	background-position: center;
+  transition: background 0.8s;
+}
+
+.ripple.standard:hover {
+	background: DodgerBlue radial-gradient(circle, transparent 1%, DodgerBlue 1%) center/15000%;
+}
+
+.ripple.standard:active {
+	background-color: #6ec0ff;
+	background-color: grey;
+  background-size: 100%;
+  transition: background 0s;
+}
+
+/*********************************************/
+/*********************************************/
+
+.ripple.create {
+	background-position: center;
+  transition: background 0.8s;
+}
+
+.ripple.create:hover {
+	background: limeGreen radial-gradient(circle, transparent 1%, limeGreen 1%) center/15000%;
+}
+
+.ripple.create:active {
+	background-color: lightGreen;
+	background-color: grey;
+  background-size: 100%;
+  transition: background 0s;
+}
+
+/*********************************************/
+/*********************************************/
+
+.ripple.delete {
+	background-position: center;
+  transition: background 0.8s;
+}
+
+.ripple.delete:hover {
+	background: Crimson radial-gradient(circle, transparent 1%, Crimson 1%) center/15000%;
+}
+
+.ripple.delete:active {
+	background-color: lightCoral;
+	background-color: grey;
+  background-size: 100%;
+  transition: background 0s;
+}
+
+/********************************************/
+
+@media screen and (min-width: 960px) {
+	.navlist {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+	}
+}
