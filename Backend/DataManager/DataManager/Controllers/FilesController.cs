@@ -13,6 +13,8 @@ using Microsoft.IdentityModel.Tokens;
 using System.Security.Claims;
 using System;
 using System.IO;
+using System.Net.Http.Headers;
+using Microsoft.Extensions.Primitives;
 
 namespace TodoApi.Controllers
 {
@@ -21,32 +23,47 @@ namespace TodoApi.Controllers
     public class FileController : ControllerBase
     {
         private readonly  DataContext _context;
-     
-
+        public FileStream fs;
+        DataManager.Models.File UserFile = new DataManager.Models.File();
         public FileController(DataContext context)
         {
             _context = context;
         
         }
-        [HttpGet]
-        /* public async Task<ActionResult<IEnumerable<File>>> GetFiles()
+        
+        [HttpPost, DisableRequestSizeLimit]
+        public async Task<ActionResult> PostFile()
         {
-            return await _context.Files.ToListAsync();
-        }*/
-        [HttpPost]
-        public async Task<ActionResult> PostFile(IFormFile file)
-        {
+            var file = Request.Form.Files[0];
+            
             if(file == null || file.Length == 0)
                 return Content("file not selected");
-            var path = Path.Combine(Directory.GetCurrentDirectory() + "/wwwroot",
-                                    file.FileName);
-
-            using (var stream = new FileStream(path, FileMode.Create))
+            var path = Path.Combine(Directory.GetCurrentDirectory() + "/wwwroot");
+            if (!Directory.Exists(path))
             {
-                await file.CopyToAsync(stream);
+                Directory.CreateDirectory(path);
             }
-
-            return RedirectToAction("Files");
+            if(file.Length > 0)
+            {
+                string filename = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
+                var path2 = Path.Combine(path +"/"+ file.FileName); //To make directory remove the +/+
+                using (var stream = new FileStream(path2,FileMode.Create))
+                {
+                    await file.CopyToAsync(stream);
+                }
+                StringValues id;
+                Request.Form.TryGetValue("currentId", out id);
+                var PersonId = Request.Form.Keys;
+                UserFile.FilePath = path2;
+                UserFile.PersonId = id;
+              
+               
+            }
+            
+            _context.Files.Add(UserFile);
+            await _context.SaveChangesAsync();
+            return new JsonResult("upload successful");
+         
         }
         
 

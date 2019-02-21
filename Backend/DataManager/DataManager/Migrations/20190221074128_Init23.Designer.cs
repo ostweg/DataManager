@@ -3,14 +3,16 @@ using System;
 using DataManager.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DataManager.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20190221074128_Init23")]
+    partial class Init23
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -24,13 +26,11 @@ namespace DataManager.Migrations
 
                     b.Property<string>("FilePath");
 
-                    b.Property<string>("PersonId");
-
-                    b.Property<long?>("PersonId1");
+                    b.Property<long?>("PersonId");
 
                     b.HasKey("FileId");
 
-                    b.HasIndex("PersonId1");
+                    b.HasIndex("PersonId");
 
                     b.ToTable("Files");
                 });
@@ -65,7 +65,7 @@ namespace DataManager.Migrations
                 {
                     b.HasOne("DataManager.Models.Person", "Person")
                         .WithMany()
-                        .HasForeignKey("PersonId1");
+                        .HasForeignKey("PersonId");
                 });
 #pragma warning restore 612, 618
         }

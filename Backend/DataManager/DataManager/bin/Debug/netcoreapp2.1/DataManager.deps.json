@@ -3512,7 +3512,7 @@
     "Microsoft.AspNetCore.Razor.Design/2.1.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ab4+TZw3Sxqrr5TwrwVyABeQkhSxYMJXgG6yZw7T+r6Vz+hcOt+pK79o15ESG7kZvWAK9wRG7emnTIia5O6R1Q==",
+      "sha512": "sha512-fe1+dpy+eM4IX1zodsvkihO1Spuj0NecfStWzvkYoMo7/ziOsqSv4vFK36ZpBfHa4gpdCEwaU46EPzdq+ZDYhQ==",
       "path": "microsoft.aspnetcore.razor.design/2.1.2",
       "hashPath": "microsoft.aspnetcore.razor.design.2.1.2.nupkg.sha512"
     },
@@ -3631,7 +3631,7 @@
     "MySqlConnector/0.42.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-mw9ko3UC/tHH/wAqFrD4ZRUi5n39mWLn6Fzlqy+tpMdLYLjeCfGchZDWBHkqjAv54/LLgnlwGECDUk0Yg+JeXQ==",
+      "sha512": "sha512-7jS8P+XOw+vS/reuwEEGhtAKvagiOEtOsu5/46Bnuiw+DgOjAFgMSojkiVaZi9DHcatP8jgmjY67iDGVZByQng==",
       "path": "mysqlconnector/0.42.1",
       "hashPath": "mysqlconnector.0.42.1.nupkg.sha512"
     },
@@ -3652,14 +3652,14 @@
     "Pomelo.EntityFrameworkCore.MySql/2.1.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-JauxInJNVU+yRtqf/J5snn1VPtDEQzAroAEt74IY/JYm0/rr4MgDhliR+Bg4mOutExthEFYgDuxRmDvtj6p6Tg==",
+      "sha512": "sha512-V/W72zl2iWUWdSvj0c9chzssv9OUdSbEiEeOmP3D5Co5CbAtOiyyFwov0hVN+D/VNGhUQGszUltIWuoYEjTHhQ==",
       "path": "pomelo.entityframeworkcore.mysql/2.1.1",
       "hashPath": "pomelo.entityframeworkcore.mysql.2.1.1.nupkg.sha512"
     },
     "Pomelo.JsonObject/1.1.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-IzQjzkvDn0R6QbGGBfcTXFhJMayGRx6cU55nXL0SrSooRFtarkQG2tPOCsyhZ2d6P3Ki6iBwKR5At2hFKeYmhQ==",
+      "sha512": "sha512-erkYG/OW1LloSwDFGeS9MvVjy1FLmaV3k8GK/GMR8D3sSDEylZogoLdLiaOFc92+zTen92rG6XGiioNacSlg0A==",
       "path": "pomelo.jsonobject/1.1.1",
       "hashPath": "pomelo.jsonobject.1.1.1.nupkg.sha512"
     },
@@ -4821,7 +4821,7 @@
     "Newtonsoft.Json/11.0.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-IvJe1pj7JHEsP8B8J8DwlMEx8UInrs/x+9oVY+oCD13jpLu4JbJU2WCIsMRn5C4yW9+DgkaO8uiVE5VHKjpmdQ==",
+      "sha512": "sha512-znZGbws7E4BA9jxNZ7FuiIRI3C9hrgatVQSTKhIYZYNOud4M5VfGlTYi6RdYO5sQrebFuF/g9UEV3hOxDMXF6Q==",
       "path": "newtonsoft.json/11.0.2",
       "hashPath": "newtonsoft.json.11.0.2.nupkg.sha512"
     },

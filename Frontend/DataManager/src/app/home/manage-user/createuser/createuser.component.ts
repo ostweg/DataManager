@@ -36,7 +36,7 @@ export class CreateuserComponent implements OnInit {
     this.user = {
       FirstName:undefined,
       LastName:undefined,
-      Rights:"rw",
+      rights:"rw",
       organisationName:undefined,
       username:undefined,
       password:undefined,
@@ -66,7 +66,7 @@ export class CreateuserComponent implements OnInit {
       this.user = {
         FirstName:undefined,
         LastName:undefined,
-        Rights:"rw",
+        rights:"rw",
         organisationName: <any>org,
         username:undefined,
         password:undefined,

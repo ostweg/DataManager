@@ -29,7 +29,7 @@ export class SignUpComponent implements OnInit {
     this.user = {
       FirstName:undefined,
       LastName:undefined,
-      Rights:"rwd",
+      rights:"rwd",
       organisationName:undefined,
       username:undefined,
       password:undefined,
@@ -57,7 +57,7 @@ export class SignUpComponent implements OnInit {
         this.user = {
           FirstName: undefined,
           LastName: undefined,
-          Rights: "rwd",
+          rights: "rwd",
           organisationName: undefined,
           username: undefined,
           password: undefined,

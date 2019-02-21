@@ -1,9 +1,9 @@
 
 export interface UserService {
-  Userid?:number;
+  personId?:number;
   FirstName?:string;
   LastName?:string;
-  Rights?:string;
+  rights?:string;
   username:string;
   password:string;
   Email?:string;

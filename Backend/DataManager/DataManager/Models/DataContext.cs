@@ -15,5 +15,6 @@ namespace DataManager.Models
         }
         public DbSet<Person> Persons { get; set; }
         public DbSet<File> Files {get;set;}
+        
     }
 }

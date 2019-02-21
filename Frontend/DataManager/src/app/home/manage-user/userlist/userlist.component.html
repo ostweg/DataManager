@@ -1,3 +1,4 @@
+<h1>User list</h1>
 <div class="search-div">
   <button mat-raised-button (click)="dialog()">
     <mat-icon>add</mat-icon>Create
@@ -30,7 +31,7 @@
     <ng-container matColumnDef="actions"> <!-- hide with ngIf="admin" -->
         <th mat-header-cell *matHeaderCellDef> Actions </th>
       <td *matCellDef="let row" >
-        <div >
+        <div *ngIf="UserRight == 'rwd'">
         <button mat-icon-button><mat-icon>launch</mat-icon></button>
         <button mat-icon-button color="warn" (click)="onDelete(row)"><mat-icon>delete_outline</mat-icon></button>
         </div>

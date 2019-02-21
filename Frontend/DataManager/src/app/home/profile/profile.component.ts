@@ -29,7 +29,7 @@ export class ProfileComponent implements OnInit {
     this.Config.GetUsers().subscribe( data => {
       this.User = data.find(x => x.username == this.CurrentUserName);
      
-      if(this.User.Rights == "rwd"){
+      if(this.User.rights == "rwd"){
         this.Status = "Admin";
       }else {
         this.Status = "User";

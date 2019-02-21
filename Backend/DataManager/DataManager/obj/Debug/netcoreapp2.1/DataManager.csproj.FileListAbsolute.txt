@@ -26,3 +26,17 @@ C:\m246\DataManager\Backend\DataManager\DataManager\obj\Debug\netcoreapp2.1\Data
 C:\m246\DataManager\Backend\DataManager\DataManager\obj\Debug\netcoreapp2.1\DataManager.RazorTargetAssemblyInfo.cache
 C:\m246\DataManager\Backend\DataManager\DataManager\obj\Debug\netcoreapp2.1\DataManager.dll
 C:\m246\DataManager\Backend\DataManager\DataManager\obj\Debug\netcoreapp2.1\DataManager.pdb
+C:\DataManager\Backend\DataManager\DataManager\bin\Debug\netcoreapp2.1\DataManager.deps.json
+C:\DataManager\Backend\DataManager\DataManager\bin\Debug\netcoreapp2.1\DataManager.runtimeconfig.json
+C:\DataManager\Backend\DataManager\DataManager\bin\Debug\netcoreapp2.1\DataManager.runtimeconfig.dev.json
+C:\DataManager\Backend\DataManager\DataManager\bin\Debug\netcoreapp2.1\DataManager.dll
+C:\DataManager\Backend\DataManager\DataManager\bin\Debug\netcoreapp2.1\DataManager.pdb
+C:\DataManager\Backend\DataManager\DataManager\obj\Debug\netcoreapp2.1\DataManager.csprojAssemblyReference.cache
+C:\DataManager\Backend\DataManager\DataManager\obj\Debug\netcoreapp2.1\DataManager.csproj.CoreCompileInputs.cache
+C:\DataManager\Backend\DataManager\DataManager\obj\Debug\netcoreapp2.1\DataManager.RazorAssemblyInfo.cache
+C:\DataManager\Backend\DataManager\DataManager\obj\Debug\netcoreapp2.1\DataManager.RazorAssemblyInfo.cs
+C:\DataManager\Backend\DataManager\DataManager\obj\Debug\netcoreapp2.1\DataManager.AssemblyInfoInputs.cache
+C:\DataManager\Backend\DataManager\DataManager\obj\Debug\netcoreapp2.1\DataManager.AssemblyInfo.cs
+C:\DataManager\Backend\DataManager\DataManager\obj\Debug\netcoreapp2.1\DataManager.RazorTargetAssemblyInfo.cache
+C:\DataManager\Backend\DataManager\DataManager\obj\Debug\netcoreapp2.1\DataManager.dll
+C:\DataManager\Backend\DataManager\DataManager\obj\Debug\netcoreapp2.1\DataManager.pdb

@@ -57,13 +57,12 @@ export class UserlistComponent implements OnInit {
   }
   GetCurrentRight(){
       this.Getusers().subscribe((right) => {
-        this.UserRight = right.Rights;
+        this.UserRight = right.rights;
         console.log(this.UserRight);
       });
   }
   ShowUsers(){
     this.configs.GetUsers().subscribe(da => {
-      console.log(this.OrgName);
       this.UsersInSameOrg = da.filter(w => w.organisationName == this.OrgName);
       this.dataSource = new MatTableDataSource(this.UsersInSameOrg);
       this.dataSource.paginator = this.paginator;
@@ -79,7 +78,7 @@ export class UserlistComponent implements OnInit {
     this.SortedData = data.sort((a,b) => {
       const IsAsc = sort.direction === 'asc';
       switch (sort.active){
-        case 'id': return this.compare(a.Userid, b.Userid, IsAsc);
+        case 'id': return this.compare(a.personId, b.personId, IsAsc);
         case 'username': return this.compare(a.username, b.username, IsAsc);
         case 'email' : return this.compare(a.Email, b.Email, IsAsc);
         case 'org' : return this.compare(a.organisationName, b.organisationName, IsAsc);
@@ -99,7 +98,7 @@ export class UserlistComponent implements OnInit {
     this.dialogs.closeAll();
   }
   onDelete($key:any){
-    this.configs.DelteUser($key).subscribe(dat => {
+    this.configs.DeleteUser($key).subscribe(dat => {
       this.configs.GlobalData();
       this.Getusers();
       this.snack.open(`User deleted`, "!", {duration:2000})
