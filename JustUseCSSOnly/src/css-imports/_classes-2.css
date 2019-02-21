@@ -1,0 +1,52 @@
+/*
+@import url(https://use.fontawesome.com/releases/v5.4.2/css/solid.css);
+@import url(https://use.fontawesome.com/releases/v5.4.2/css/fontawesome.css);
+*/
+
+
+.social-media {
+    width: 100%;
+}
+
+.social-media ul {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.social-media ul li {
+    list-style: none;
+    margin: 3px;
+}
+
+.twitter {
+    font-size: 1.1em;
+    border-radius: 4px;
+/*    background: #1b95e0;*/
+    padding: 3px 3px 0;
+/*    border: #2982d0 1px solid;*/
+    width: fit-content;
+}
+
+.twitter a {
+    color: #fff;
+}
+
+.twitter:hover {
+    /*
+    background: #0c7abf;
+    border: #1f6fe0 1px solid;
+    */
+    color: #fff;
+    text-decoration: none;
+}
+
+.twitter:hover a {
+    background: #0c7abf;
+    text-decoration: none;
+}
+
+.twitter i {
+    color: #fff;
+}
