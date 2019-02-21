@@ -1,7 +1,36 @@
-Welcome <b>{{this.User?.username }} </b>! <br>
-Organisation: <b>{{this.User?.organisationName}}</b><br>
-Email: <b>{{this.User?.email}}</b><br>
-Rights: <b>{{this.User?.rights}}</b><br>
-Status: <b>{{Status}}</b><br>
+<!-- <div class="table">
+  <tr class="big"><td>Welcome <b>{{this.User?.username }} </b>!</td><td></td></tr>
+  <tr><td>Organisation:</td> <td><b>{{this.User?.organisationName}}</b></td></tr>
+  <tr><td>Email:</td> <td><b>{{this.User?.email}}</b></td></tr>
+  <tr><td>Rights:</td> <td><b>{{this.User?.rights}}</b></td></tr>
+  <tr><td>Status:</td> <td><b>{{Status}}</b></td></tr>
+</div> -->
 
-<button type="submit" (click)="Logout()">Logout</button>
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" matSort>
+      <ng-container matColumnDef="personid">
+          <td mat-header-cell *matHeaderCellDef mat-sort-header>Welcome ! </td>
+          <td mat-cell *matCellDef="let element" >{{this.User?.username }}</td>
+        </ng-container>
+      <ng-container matColumnDef="username">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Username</th>
+          <td mat-cell *matCellDef="let element">{{this.User?.organisationName}}</td>
+        </ng-container>
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
+      <td mat-cell *matCellDef="let element">{{this.User?.email}}</td>
+    </ng-container>
+    <ng-container matColumnDef="rights">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Rights</th>
+      <td mat-cell *matCellDef="let element">{{this.User?.rights}}</td>
+    </ng-container>
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Organisation</th>
+      <td mat-cell *matCellDef="let element">{{Status}}</td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns:displayedColumns;"></tr>
+  </table>
+</div>
+
+<button mat-raised-button class="submit delete mg-12" type="submit" (click)="Logout()">Logout</button>

@@ -1,5 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('../../../JustUseCSSOnly/src/css-imports/_reset.css');
+@import url('../../../JustUseCSSOnly/src/css-imports/_base.css');
+
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+@import url('../../../JustUseCSSOnly/src/css-imports/_classes-3.css');
+@import url('../../../JustUseCSSOnly/src/css-imports/_classes-2.css');
+@import url('../../../JustUseCSSOnly/src/css-imports/_classes.css');
+
+
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .search-div{

@@ -34,13 +34,13 @@ namespace DataManager
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-         
+
              services.AddSingleton<IFileProvider>(
                 new PhysicalFileProvider(
                     ConfigurationPath.Combine(Directory.GetCurrentDirectory() + "/wwwroot")));
 
 
-            services.AddDbContext<DataContext>(opt => opt.UseMySql("server=localhost;database=DataManager;user=root;password=w2ter2468"));
+            services.AddDbContext<DataContext>(opt => opt.UseMySql("server=localhost;database=DataManager;user=root;password=gibbiX12345"));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             var appSettingsSection = Configuration.GetSection("AppSettings");
@@ -69,6 +69,11 @@ namespace DataManager
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            app.UseCors(policy =>
+         {
+             policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader().AllowCredentials();
+         });
+       
              app.UseMvc(routes =>
            {
                routes.MapRoute(
@@ -85,10 +90,7 @@ namespace DataManager
             {
                 app.UseHsts();
             }
-           app.UseCors(policy =>
-        {
-            policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader().AllowCredentials();
-        });
+
             app.UseAuthentication();
             app.UseHttpsRedirection();
             app.UseMvc();

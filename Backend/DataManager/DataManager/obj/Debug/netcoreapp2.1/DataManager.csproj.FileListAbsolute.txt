@@ -26,3 +26,17 @@ C:\m246\DataManager\Backend\DataManager\DataManager\obj\Debug\netcoreapp2.1\Data
 C:\m246\DataManager\Backend\DataManager\DataManager\obj\Debug\netcoreapp2.1\DataManager.RazorTargetAssemblyInfo.cache
 C:\m246\DataManager\Backend\DataManager\DataManager\obj\Debug\netcoreapp2.1\DataManager.dll
 C:\m246\DataManager\Backend\DataManager\DataManager\obj\Debug\netcoreapp2.1\DataManager.pdb
+C:\Users\vmadmin\Documents\GitHub\DataManager\Backend\DataManager\DataManager\bin\Debug\netcoreapp2.1\DataManager.deps.json
+C:\Users\vmadmin\Documents\GitHub\DataManager\Backend\DataManager\DataManager\bin\Debug\netcoreapp2.1\DataManager.runtimeconfig.json
+C:\Users\vmadmin\Documents\GitHub\DataManager\Backend\DataManager\DataManager\bin\Debug\netcoreapp2.1\DataManager.runtimeconfig.dev.json
+C:\Users\vmadmin\Documents\GitHub\DataManager\Backend\DataManager\DataManager\bin\Debug\netcoreapp2.1\DataManager.dll
+C:\Users\vmadmin\Documents\GitHub\DataManager\Backend\DataManager\DataManager\bin\Debug\netcoreapp2.1\DataManager.pdb
+C:\Users\vmadmin\Documents\GitHub\DataManager\Backend\DataManager\DataManager\obj\Debug\netcoreapp2.1\DataManager.csprojAssemblyReference.cache
+C:\Users\vmadmin\Documents\GitHub\DataManager\Backend\DataManager\DataManager\obj\Debug\netcoreapp2.1\DataManager.csproj.CoreCompileInputs.cache
+C:\Users\vmadmin\Documents\GitHub\DataManager\Backend\DataManager\DataManager\obj\Debug\netcoreapp2.1\DataManager.RazorAssemblyInfo.cache
+C:\Users\vmadmin\Documents\GitHub\DataManager\Backend\DataManager\DataManager\obj\Debug\netcoreapp2.1\DataManager.RazorAssemblyInfo.cs
+C:\Users\vmadmin\Documents\GitHub\DataManager\Backend\DataManager\DataManager\obj\Debug\netcoreapp2.1\DataManager.AssemblyInfoInputs.cache
+C:\Users\vmadmin\Documents\GitHub\DataManager\Backend\DataManager\DataManager\obj\Debug\netcoreapp2.1\DataManager.AssemblyInfo.cs
+C:\Users\vmadmin\Documents\GitHub\DataManager\Backend\DataManager\DataManager\obj\Debug\netcoreapp2.1\DataManager.RazorTargetAssemblyInfo.cache
+C:\Users\vmadmin\Documents\GitHub\DataManager\Backend\DataManager\DataManager\obj\Debug\netcoreapp2.1\DataManager.dll
+C:\Users\vmadmin\Documents\GitHub\DataManager\Backend\DataManager\DataManager\obj\Debug\netcoreapp2.1\DataManager.pdb

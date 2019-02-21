@@ -3,7 +3,8 @@
 <button type="button" (click)="fileInput.click()">Pick File</button>
 <button type="button" (click)="UploadFile()">Upload</button>-->
 <h1>File Upload</h1>
-<input #file type="file" multiple (change)="upload(file.files)" />
+<input id="file-upload" class="hidden" #file type="file" multiple (change)="upload(file.files)" />
+<label for="file-upload" class="input submit standard ripple"> Choose File </label>
 <br/>
 <span style="font-weight:bold;color:green;" *ngIf="progress > 0 && progress < 100">
   {{progress}}%

@@ -6,6 +6,13 @@
 .lowercase { text-transform: lowercase; }
 .capitalize { text-transform: capitalize;}
 
+.white { color: white; }
+.black { color: black; }
+
+.big { font-size: 16px; padding: 5px; }
+
+.mg-12 { margin: 12px !important; }
+
 .header {
 	padding: 10px;
 	margin: 8px;
@@ -87,6 +94,16 @@
 	margin: 32px;
 }
 
+label.input {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	width: 150px;
+	padding: 8px;
+	text-align: center;
+	font-size: 12px;
+}
+
 .input:focus-within label {
 	margin-top: -16px;
 	color: #000084;
@@ -116,6 +133,15 @@
 	box-shadow: none;
 	outline: none;
 	border-bottom: 2px solid #000084;
+}
+
+input[type=file].hidden {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
 }
 
 /**************************************************/
