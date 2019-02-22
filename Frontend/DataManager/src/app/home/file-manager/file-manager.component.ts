@@ -9,6 +9,8 @@ import {HttpClient, HttpEventType, HttpRequest} from '@angular/common/http';
 export class FileManagerComponent implements OnInit {
   public progress:number;
   public message:string;
+  public filename:string;
+  private count:number;
 
   constructor(private http:HttpClient){}
   ngOnInit(){
@@ -19,9 +21,15 @@ export class FileManagerComponent implements OnInit {
       return;
 
     const formData = new FormData();
+    this.number = 0;
+    this.filename = '';
 
     for (let file of files){
       formData.append(file.name, file);
+      this.number++;
+
+      this.filename = (this.number > )file.name + ', ';
+
     }
     const uploadReq = new HttpRequest('POST', 'https://localhost:5001/api/file',formData, {
       reportProgress: true,

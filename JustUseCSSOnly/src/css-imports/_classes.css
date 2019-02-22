@@ -13,6 +13,9 @@
 
 .mg-12 { margin: 12px !important; }
 
+.z-index-neg { z-index: -1;}
+.z-index-pos { z-index: 1;}
+
 .header {
 	padding: 10px;
 	margin: 8px;
