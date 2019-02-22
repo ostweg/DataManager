@@ -11,10 +11,16 @@ export class AuthGuardService {
   constructor(public auth: AuthService, public router:Router) { }
 
   canActivate():boolean {
+
     const user = JSON.parse(localStorage.getItem('currentuser'));
-    if(user.username == null) {
+    try {
+      if (user.username == " ") {
+
+        this.router.navigateByUrl('/login');
+      }
+      return true;
+    }catch(e){
       this.router.navigateByUrl('/login');
     }
-    return true;
   }
 }

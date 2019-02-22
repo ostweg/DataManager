@@ -22,6 +22,7 @@ import {MatSortModule} from '@angular/material/sort';
 import { CreateuserComponent } from './home/manage-user/createuser/createuser.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { UnittestComponent } from './home/unittest/unittest.component';
 
 const Approutes : Routes = [
   {path:'home', component:HomeComponent, canActivate: [AuthGuard]},
@@ -64,6 +65,7 @@ const JWT_Module_Options: JwtModuleOptions = {
     ManageUserComponent,
     UserlistComponent,
     CreateuserComponent,
+    UnittestComponent,
     
     
   ],
