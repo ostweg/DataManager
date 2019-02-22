@@ -232,7 +232,7 @@ div.create {
     border-color: darkred;
 }
 
-/* ********** MAIN CONTENT */
+/* **************** MAIN CONTENT */
 #main {
     position: relative;
     order: -1;
@@ -250,14 +250,14 @@ div.create {
     margin: 1% 1%;
 }
 
-/* ********* SIDEBAR */
+/* ******************* SIDEBAR */
 .sidebar {
     grid-area: 2 / 6 / 6 / 7;
     background: limeGreen;
 }
 
 
-/* ********* FOOTER */
+/* ****************** FOOTER */
 .footer {
     box-sizing: border-box;
     position: relative;
