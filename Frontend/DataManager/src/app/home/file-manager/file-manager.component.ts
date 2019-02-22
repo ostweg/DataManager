@@ -30,9 +30,10 @@ export class FileManagerComponent implements OnInit {
     var token = JSON.parse(localStorage.getItem('currentuser'));
     this.CurrentUserName = token.username;
     this.GetUser();
-    this.GetUserId();
     this.GetUserOrganisation();
+    this.GetUserId();
     this.GetFiles();
+
 
   }
   GetUser():Observable<UserService>{
@@ -40,6 +41,7 @@ export class FileManagerComponent implements OnInit {
     this.configs.GetUsers().subscribe(data1 => {
       subject.next(data1.find(x => x.username == this.CurrentUserName));
     });
+
     return subject.asObservable();
 
   }
@@ -55,7 +57,6 @@ export class FileManagerComponent implements OnInit {
   GetUserOrganisation(){
     this.GetUser().subscribe((data1)=>{
       this.UserOrganisation = data1.organisationName;
-      console.log(this.UserOrganisation);
     })
   }
 
@@ -98,14 +99,14 @@ export class FileManagerComponent implements OnInit {
     });
   }
   GetFiles(){
-    console.log(this.UserOrganisation);
+
+    var token = JSON.parse(localStorage.getItem('currentOrgName'));
     this.configs.GetFiles().subscribe(data => {
-      this.FileList = data.filter(x => x.personOrg == this.UserOrganisation);
-      console.log(this.FileList);
+      this.FileList = data.filter(x => x.personOrg == token.orgname);
       this.dataSource = new MatTableDataSource(this.FileList);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
-    })
+    });
   }
   displayedColumns: string[] = ['fileId','personId','fileName','actions'];
 }

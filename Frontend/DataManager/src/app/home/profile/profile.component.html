@@ -1,8 +1,23 @@
-<h1>Profile</h1>
-Welcome <b>{{this.User?.username }} </b>! <br>
-Organisation: <b>{{this.User?.organisationName}}</b><br>
-Email: <b>{{this.User?.email}}</b><br>
-Rights: <b>{{this.User?.rights}}</b><br>
-Status: <b>{{Status}}</b><br>
+<h1 class="title">Profile</h1>
+<div class="container">
+  <div class="b1">
+  <h2>Welcome<br><span><b>{{this.User?.username }} </b>! </span></h2> <br>
+</div>
+  <div class="b2">
+    Organisation: <b>{{this.User?.organisationName}}</b><br>
+  </div>
+  <div class="b3">
+    Email: <b>{{this.User?.email}}</b><br>
+  </div>
+  <div class="b4">
+    Rights: <b>{{this.User?.rights}}</b><br>
+  </div>
+  <div class="b5">
+    Status: <b>{{Status}}</b><br>
+  </div>
+</div>
 
-<button type="submit" (click)="Logout()">Logout</button>
+
+
+
+<button type="submit" id="sub" (click)="Logout()">Logout</button>

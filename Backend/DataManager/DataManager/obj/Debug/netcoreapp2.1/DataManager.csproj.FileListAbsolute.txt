@@ -40,3 +40,17 @@ C:\DataManager\Backend\DataManager\DataManager\obj\Debug\netcoreapp2.1\DataManag
 C:\DataManager\Backend\DataManager\DataManager\obj\Debug\netcoreapp2.1\DataManager.RazorTargetAssemblyInfo.cache
 C:\DataManager\Backend\DataManager\DataManager\obj\Debug\netcoreapp2.1\DataManager.dll
 C:\DataManager\Backend\DataManager\DataManager\obj\Debug\netcoreapp2.1\DataManager.pdb
+C:\Users\samuel\angular\DataManager\Backend\DataManager\DataManager\bin\Debug\netcoreapp2.1\DataManager.deps.json
+C:\Users\samuel\angular\DataManager\Backend\DataManager\DataManager\bin\Debug\netcoreapp2.1\DataManager.runtimeconfig.json
+C:\Users\samuel\angular\DataManager\Backend\DataManager\DataManager\bin\Debug\netcoreapp2.1\DataManager.runtimeconfig.dev.json
+C:\Users\samuel\angular\DataManager\Backend\DataManager\DataManager\bin\Debug\netcoreapp2.1\DataManager.dll
+C:\Users\samuel\angular\DataManager\Backend\DataManager\DataManager\bin\Debug\netcoreapp2.1\DataManager.pdb
+C:\Users\samuel\angular\DataManager\Backend\DataManager\DataManager\obj\Debug\netcoreapp2.1\DataManager.csprojAssemblyReference.cache
+C:\Users\samuel\angular\DataManager\Backend\DataManager\DataManager\obj\Debug\netcoreapp2.1\DataManager.csproj.CoreCompileInputs.cache
+C:\Users\samuel\angular\DataManager\Backend\DataManager\DataManager\obj\Debug\netcoreapp2.1\DataManager.RazorAssemblyInfo.cache
+C:\Users\samuel\angular\DataManager\Backend\DataManager\DataManager\obj\Debug\netcoreapp2.1\DataManager.RazorAssemblyInfo.cs
+C:\Users\samuel\angular\DataManager\Backend\DataManager\DataManager\obj\Debug\netcoreapp2.1\DataManager.AssemblyInfoInputs.cache
+C:\Users\samuel\angular\DataManager\Backend\DataManager\DataManager\obj\Debug\netcoreapp2.1\DataManager.AssemblyInfo.cs
+C:\Users\samuel\angular\DataManager\Backend\DataManager\DataManager\obj\Debug\netcoreapp2.1\DataManager.RazorTargetAssemblyInfo.cache
+C:\Users\samuel\angular\DataManager\Backend\DataManager\DataManager\obj\Debug\netcoreapp2.1\DataManager.dll
+C:\Users\samuel\angular\DataManager\Backend\DataManager\DataManager\obj\Debug\netcoreapp2.1\DataManager.pdb

@@ -1,17 +1,40 @@
 <div class ="container">
   <div class="t1">
-    <p>#(UT)1Successful login</p>
+    <h5>#(UT)1Unsuccessful login</h5>
+    <h6 (click)="toggle('login')"><i>View info</i></h6>
+    <div class="info"  *ngIf="visible === 'login'">
+      <p>Username:kek/password:asdf12345</p>
+      <p>Will simulate a login process by checking if user is in database</p>
+      <p>Status: {{IsFound}}</p>
+      <button mat-icon-button (click)="CheckIfUserExists()"><mat-icon>arrow_right</mat-icon></button>
+    </div>
   </div>
   <div class="t2">
-    <p>#(UT)2 Successful Registration</p>
+    <p>#(UT)2 Unsuccessful Registration</p>
+    <h6 (click)="toggle('registration')"><i>View info</i></h6>
+    <div class="info"  *ngIf="visible === 'registration'">
+      <p>Username:dummy/password:dummy/Firstname:dummy/Lastname:dummy/email:dummydummy.ch/rights:rw</p>
+      <p>Will simulate a failed registration process by adding wrong data</p>
+      <p>Status:{{IsRegistrated}}</p>
+      <button mat-icon-button (click)="RegistrateUser()"><mat-icon>arrow_right</mat-icon></button>
+    </div>
   </div>
   <div class="t3">
     <p>(UT)#3 Successful logout</p>
+    <h6 (click)="toggle('logout')"><i>View info</i></h6>
+    <div class="info"  *ngIf="visible === 'logout'">
+      <p>Will simulate a logout by sending you to the login view and by deleting the set tokens</p>
+      <button mat-icon-button (click)="LogoutUser()"><mat-icon>arrow_right</mat-icon></button>
+    </div>
   </div>
   <div class="t4">
     <p>(UT)#4 Successful file-upload</p>
+    <h6 (click)="toggle('file-upload')"><i>View info</i></h6>
+    <div class="info"  *ngIf="visible === 'file-upload'">
+      <p>Will simulate a successful file upload</p>
+      <p>Status:{{IsUploaded}}</p>
+      <input #file type="file" id="filebutton" (change)="UploadFile(file.files)" placeholder="Upload Files" autocomplete="off"/>
+    </div>
   </div>
-  <div class="t5">
-    <p>(UT)#5 Successful file-delete</p>
-  </div>
+
 </div>

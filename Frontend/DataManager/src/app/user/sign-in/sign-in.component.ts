@@ -33,14 +33,14 @@ export class SignInComponent implements OnInit {
   GetUsers(){
     this.Config.GetUsers().subscribe(data => {
       this.Users = data;
-      console.log(this.Users)
+
     });
   }
   
   
   CheckIfUserMatches(Username:string, Password:string){
 
-    console.log(Username);
+
 
    if(this.Users.find(user1 => user1.username == Username && user1.password == Password)){
     localStorage.setItem('currentuser', JSON.stringify({username:Username})); //Add IsLoggedIn to UserService and check if it is true instead of token.

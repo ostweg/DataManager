@@ -1,6 +1,6 @@
 <h1>User list</h1>
 <p>Users from you organisation</p>
-<div class="search-div">
+<div class="search-div" *ngIf="UserRight == 'rwd'">
   <button mat-raised-button (click)="dialog()">
     <mat-icon>add</mat-icon>Create
   </button>
@@ -33,7 +33,7 @@
         <th mat-header-cell *matHeaderCellDef> Actions </th>
       <td *matCellDef="let row" >
         <div *ngIf="UserRight == 'rwd'">
-        <button mat-icon-button><mat-icon>launch</mat-icon></button>
+
         <button mat-icon-button color="warn" (click)="onDelete(row)"><mat-icon>delete_outline</mat-icon></button>
         </div>
       </td>

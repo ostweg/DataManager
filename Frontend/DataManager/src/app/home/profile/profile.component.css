@@ -1,0 +1,31 @@
+.b2,.b3,.b4 {
+  flex:1;
+  border-bottom:1px solid #efefef;
+  height:70px;
+  padding:14px;
+  margin:5px;
+}
+.b5 {
+  padding-left:14px;
+  margin-top:15px;
+  margin-left:5px;
+}
+
+.container {
+  display:flex;
+  flex-direction: column;
+  margin-left:7%;
+  margin-right:7%;
+}
+.title {
+  margin-left:15px;
+}
+#sub {
+  margin-top:50px;
+ margin-left:7%;
+  border:None;
+  height:40px;
+  width:120px;
+  color:white;
+  background-color:#3A3B94;
+}

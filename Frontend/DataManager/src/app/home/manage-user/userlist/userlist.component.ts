@@ -52,13 +52,14 @@ export class UserlistComponent implements OnInit {
   GetOrgName(){
     this.Getusers().subscribe((us)=> {
       this.OrgName = us.organisationName;
-      console.log(this.OrgName);
+      localStorage.setItem('currentOrgName',JSON.stringify({orgname:us.organisationName}));
+
     });
   }
   GetCurrentRight(){
       this.Getusers().subscribe((right) => {
         this.UserRight = right.rights;
-        console.log(this.UserRight);
+
       });
   }
   ShowUsers(){

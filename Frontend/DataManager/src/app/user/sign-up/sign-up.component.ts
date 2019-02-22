@@ -50,7 +50,7 @@ export class SignUpComponent implements OnInit {
 
 
   RegisterUserData(event:any,usn:string) {
-    console.log(usn);
+
     localStorage.setItem('currentuser', JSON.stringify({username: usn}));
     if (this.registerForm.valid) {
       this.config.PostData(this.user).subscribe((data: UserService) => {

@@ -1,10 +1,6 @@
-<!--<h1>File Upload</h1>
-<input type="file" style="display: none"(change)="FileSelect($event)" #fileInput>
-<button type="button" (click)="fileInput.click()">Pick File</button>
-<button type="button" (click)="UploadFile()">Upload</button>-->
-<h1>File Upload</h1>
-<input #file type="file" multiple (change)="upload(file.files)" />
 
+<h1>File Upload</h1>
+<input #file type="file" id="filebutton" (change)="upload(file.files)" placeholder="Upload Files" autocomplete="off"/>
 <span style="font-weight:bold;color:green;" *ngIf="progress > 0 && progress < 100">
   {{progress}}%
 </span>
@@ -31,7 +27,6 @@
       <th mat-header-cell *matHeaderCellDef> Actions </th>
       <td *matCellDef="let row" >
         <div>
-          <button mat-icon-button (click)="SaveFile(row)"><mat-icon>archive</mat-icon></button>
           <button mat-icon-button color="warn" (click)="OnDelete(row)"><mat-icon>delete_outline</mat-icon></button>
         </div>
       </td>
