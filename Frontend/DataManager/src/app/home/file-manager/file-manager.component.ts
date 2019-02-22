@@ -27,8 +27,7 @@ export class FileManagerComponent implements OnInit {
     for (let file of files){
       formData.append(file.name, file);
       this.number++;
-
-      this.filename = (this.number > )file.name + ', ';
+      this.filename = (this.number <= 1) ? file.name : this.number +' files';
 
     }
     const uploadReq = new HttpRequest('POST', 'https://localhost:5001/api/file',formData, {
