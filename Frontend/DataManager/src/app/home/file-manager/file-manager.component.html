@@ -4,7 +4,7 @@
 <button type="button" (click)="UploadFile()">Upload</button>-->
 <h1>File Upload</h1>
 <input id="file-upload" class="hidden" #file type="file" multiple (change)="upload(file.files)" />
-<label for="file-upload" class="input submit standard ripple"> Choose File </label>
+<button mat-raised-button class="submit standard mg-12" (click)='file.click()'> Choose File </button>
 <br/>
 <span style="font-weight:bold;color:green;" *ngIf="progress > 0 && progress < 100">
   {{progress}}%
