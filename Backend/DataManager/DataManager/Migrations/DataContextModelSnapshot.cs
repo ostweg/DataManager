@@ -22,11 +22,15 @@ namespace DataManager.Migrations
                     b.Property<long>("FileId")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("FileName");
+
                     b.Property<string>("FilePath");
 
                     b.Property<string>("PersonId");
 
                     b.Property<long?>("PersonId1");
+
+                    b.Property<string>("PersonOrg");
 
                     b.HasKey("FileId");
 

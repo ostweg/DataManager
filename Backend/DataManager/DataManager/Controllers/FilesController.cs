@@ -30,7 +30,14 @@ namespace TodoApi.Controllers
             _context = context;
         
         }
-        
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<DataManager.Models.File>>> GetFiles()
+        {
+            return await _context.Files.ToListAsync();
+
+        }
+
+
         [HttpPost, DisableRequestSizeLimit]
         public async Task<ActionResult> PostFile()
         {
@@ -53,9 +60,13 @@ namespace TodoApi.Controllers
                 }
                 StringValues id;
                 Request.Form.TryGetValue("currentId", out id);
+                StringValues org;
+                Request.Form.TryGetValue("currentOrg", out org);
                 var PersonId = Request.Form.Keys;
+                UserFile.FileName = file.FileName;
                 UserFile.FilePath = path2;
                 UserFile.PersonId = id;
+                UserFile.PersonOrg = org;
               
                
             }
@@ -65,7 +76,20 @@ namespace TodoApi.Controllers
             return new JsonResult("upload successful");
          
         }
-        
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<DataManager.Models.File>> DeleteFile(long id)
+        {
+            var file = await _context.Files.FindAsync(id);
+            if (file == null)
+            {
+                return NotFound();
+            }
+
+            _context.Files.Remove(file);
+            await _context.SaveChangesAsync();
+
+            return file;
+        }
 
     }
 }

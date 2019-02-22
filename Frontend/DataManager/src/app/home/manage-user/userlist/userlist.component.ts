@@ -62,8 +62,8 @@ export class UserlistComponent implements OnInit {
       });
   }
   ShowUsers(){
-    this.configs.GetUsers().subscribe(da => {
-      this.UsersInSameOrg = da.filter(w => w.organisationName == this.OrgName);
+    this.configs.GetUsers().subscribe(data => {
+      this.UsersInSameOrg = data.filter(w => w.organisationName == this.OrgName);
       this.dataSource = new MatTableDataSource(this.UsersInSameOrg);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
@@ -75,6 +75,8 @@ export class UserlistComponent implements OnInit {
       this.SortedData = data;
       return;
     }
+
+
     this.SortedData = data.sort((a,b) => {
       const IsAsc = sort.direction === 'asc';
       switch (sort.active){
@@ -85,6 +87,15 @@ export class UserlistComponent implements OnInit {
         default:return 0;
       }
     })
+  }
+  OnSearchClear(){
+    this.SearchKey = '';
+  }
+  ApplyFilter(e){
+    this.GetFilteredList();
+  }
+  GetFilteredList(){
+
   }
   compare(a:number| string, b:number|string, isAsc:boolean){
     return (a<b ? -1:1)*(isAsc ? 1: -1);

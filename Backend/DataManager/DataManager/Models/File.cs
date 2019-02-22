@@ -10,6 +10,8 @@ namespace DataManager.Models
     {
         public long FileId { get; set; }
         public string FilePath { get; set; }
+        public string FileName { get; set; }
+        public string PersonOrg { get; set; }
         public string PersonId { get; set; }
         public Person Person {get;set;}
 

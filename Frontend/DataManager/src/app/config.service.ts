@@ -14,8 +14,8 @@ export class ConfigService {
   constructor(private HttpClient:HttpClient) { 
 
   }
-  PostFile(object:File){
-    return this.HttpClient.post<File>(`${this.urlFile}`,object);
+  GetFiles():Observable<FileService[]>{
+    return this.HttpClient.get<FileService[]>(`${this.urlFile}`);
   }
   PostData(object:UserService):Observable<UserService>{
 
@@ -29,6 +29,9 @@ export class ConfigService {
   }
   DeleteUser(object:any):Observable<any>{
     return this.HttpClient.delete<any>(`${this.url}/${object.personId}`);
+  }
+  DeleteFile(object:any):Observable<any>{
+    return this.HttpClient.delete<any>(`${this.urlFile}/${object.fileId}`);
   }
   GlobalData(){
     this.GetUsers();

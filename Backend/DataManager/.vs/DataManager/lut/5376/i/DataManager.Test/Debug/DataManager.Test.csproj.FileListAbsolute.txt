@@ -1,0 +1,2 @@
+C:\DataManager\Backend\DataManager\.vs\DataManager\lut\0\i\DataManager.Test\Debug\DataManager.Test.csprojAssemblyReference.cache
+C:\DataManager\Backend\DataManager\.vs\DataManager\lut\0\i\DataManager.Test\Debug\DataManager.Test.csproj.CoreCompileInputs.cache

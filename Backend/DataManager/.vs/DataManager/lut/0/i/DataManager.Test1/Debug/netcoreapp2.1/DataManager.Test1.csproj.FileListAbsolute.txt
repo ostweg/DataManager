@@ -1,0 +1,8 @@
+C:\DataManager\Backend\DataManager\.vs\DataManager\lut\0\i\DataManager.Test1\Debug\netcoreapp2.1\DataManager.Test1.csprojAssemblyReference.cache
+C:\DataManager\Backend\DataManager\.vs\DataManager\lut\0\i\DataManager.Test1\Debug\netcoreapp2.1\DataManager.Test1.csproj.CoreCompileInputs.cache
+C:\DataManager\Backend\DataManager\.vs\DataManager\lut\0\i\DataManager.Test1\Debug\netcoreapp2.1\DataManager.Test1.AssemblyInfoInputs.cache
+C:\DataManager\Backend\DataManager\.vs\DataManager\lut\0\i\DataManager.Test1\Debug\netcoreapp2.1\DataManager.Test1.AssemblyInfo.cs
+C:\DataManager\Backend\DataManager\.vs\DataManager\lut\0\b\DataManager.Test1\Debug\netcoreapp2.1\DataManager.Test1.deps.json
+C:\DataManager\Backend\DataManager\.vs\DataManager\lut\0\b\DataManager.Test1\Debug\netcoreapp2.1\DataManager.Test1.dll
+C:\DataManager\Backend\DataManager\.vs\DataManager\lut\0\i\DataManager.Test1\Debug\netcoreapp2.1\DataManager.Test1.csproj.CopyComplete
+C:\DataManager\Backend\DataManager\.vs\DataManager\lut\0\i\DataManager.Test1\Debug\netcoreapp2.1\DataManager.Test1.dll

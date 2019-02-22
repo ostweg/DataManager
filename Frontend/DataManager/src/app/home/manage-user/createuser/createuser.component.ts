@@ -61,7 +61,7 @@ export class CreateuserComponent implements OnInit {
   }
   
   PostUser(org:any){
-    this.user.organisationName = org; 
+    this.user.organisationName = org;
     this.config.PostData(this.user).subscribe((data: UserService) => {
       this.user = {
         FirstName:undefined,

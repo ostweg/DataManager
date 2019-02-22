@@ -4,7 +4,7 @@
 <button type="button" (click)="UploadFile()">Upload</button>-->
 <h1>File Upload</h1>
 <input #file type="file" multiple (change)="upload(file.files)" />
-<br/>
+
 <span style="font-weight:bold;color:green;" *ngIf="progress > 0 && progress < 100">
   {{progress}}%
 </span>
@@ -12,3 +12,32 @@
 <span style="font-weight:bold;color:green;" *ngIf="message">
   {{message}}
 </span>
+<p>Files from your organisation</p>
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" matSort>
+    <ng-container matColumnDef="fileId">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
+      <td mat-cell *matCellDef="let element" >{{element.fileId}}</td>
+    </ng-container>
+    <ng-container matColumnDef="personId">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>PersonId</th>
+      <td mat-cell *matCellDef="let element" >{{element.personId}}</td>
+    </ng-container>
+    <ng-container matColumnDef="fileName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>FileName</th>
+      <td mat-cell *matCellDef="let element" >{{element.fileName}}</td>
+    </ng-container>
+    <ng-container matColumnDef="actions"> <!-- hide with ngIf="admin" -->
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td *matCellDef="let row" >
+        <div>
+          <button mat-icon-button (click)="SaveFile(row)"><mat-icon>archive</mat-icon></button>
+          <button mat-icon-button color="warn" (click)="OnDelete(row)"><mat-icon>delete_outline</mat-icon></button>
+        </div>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns:displayedColumns;"></tr>
+  </table>
+  <mat-paginator #paginator [pageSizeOptions]="[1,5,10,20]" [pageSize]="5" showFirstLastButtons></mat-paginator>
+</div>

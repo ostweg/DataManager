@@ -1,8 +1,12 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {HttpClient, HttpEventType, HttpRequest} from '@angular/common/http';
 import {observable, Observable, Subject} from 'rxjs';
 import {UserService} from '../../user.service';
 import {ConfigService} from '../../config.service';
+import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
+import {FileService} from '../../interfaces/File.service';
+import {MatSnackBar} from '@angular/material';
+import {saveAs} from 'file-saver';
 
 @Component({
   selector: 'app-file-manager',
@@ -10,20 +14,28 @@ import {ConfigService} from '../../config.service';
   styleUrls: ['./file-manager.component.css']
 })
 export class FileManagerComponent implements OnInit {
+  @ViewChild(MatSort) sort:MatSort;
+  @ViewChild('paginator') paginator:MatPaginator;
+  public dataSource: MatTableDataSource<any>;
   public progress:number;
   public message:string;
   CurrentUserName:string;
   UserId:number;
+  UserOrganisation:string;
+  FileList:FileService[];
 
-  constructor(private http:HttpClient, private configs: ConfigService){}
+  constructor(private http:HttpClient, private configs: ConfigService, private snack:MatSnackBar){}
 
   ngOnInit(){
     var token = JSON.parse(localStorage.getItem('currentuser'));
     this.CurrentUserName = token.username;
-    this.Getuser();
+    this.GetUser();
     this.GetUserId();
+    this.GetUserOrganisation();
+    this.GetFiles();
+
   }
-  Getuser():Observable<UserService>{
+  GetUser():Observable<UserService>{
     let subject: Subject<UserService> = new Subject();
     this.configs.GetUsers().subscribe(data1 => {
       subject.next(data1.find(x => x.username == this.CurrentUserName));
@@ -31,11 +43,22 @@ export class FileManagerComponent implements OnInit {
     return subject.asObservable();
 
   }
+  SaveFile($key:any){
+    console.log($key.filePath);
+    saveAs($key.filePath);
+  }
   GetUserId(){
-    this.Getuser().subscribe((data)=> {
+    this.GetUser().subscribe((data)=> {
       this.UserId = data.personId;
     });
   }
+  GetUserOrganisation(){
+    this.GetUser().subscribe((data1)=>{
+      this.UserOrganisation = data1.organisationName;
+      console.log(this.UserOrganisation);
+    })
+  }
+
   upload(files){
     if(files.length === 0)
       return;
@@ -46,6 +69,7 @@ export class FileManagerComponent implements OnInit {
       formData.append(file.name, file,);
     }
     formData.append('currentId',this.UserId.toString());
+    formData.append('currentOrg', this.UserOrganisation);
 
 
     const uploadReq = new HttpRequest('POST', 'https://localhost:5001/api/file',formData, {
@@ -62,6 +86,26 @@ export class FileManagerComponent implements OnInit {
       }
     });
 
-  }
 
+
+
+  }
+  OnDelete($key:any){
+    this.configs.DeleteFile($key).subscribe(dat => {
+      this.configs.GlobalData();
+      this.GetFiles();
+      this.snack.open(`File Delete`, "!", {duration:2000})
+    });
+  }
+  GetFiles(){
+    console.log(this.UserOrganisation);
+    this.configs.GetFiles().subscribe(data => {
+      this.FileList = data.filter(x => x.personOrg == this.UserOrganisation);
+      console.log(this.FileList);
+      this.dataSource = new MatTableDataSource(this.FileList);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+    })
+  }
+  displayedColumns: string[] = ['fileId','personId','fileName','actions'];
 }
